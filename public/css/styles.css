@@ -1,0 +1,444 @@
+:root {
+    --background: hwb(240 78% 19%);
+    --color-primery: hwb(60 64% 11%);
+    --color-secundary: #4b370dec;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    background-color: --background;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1.5rem 0.8rem 1.5rem 0.5rem;
+    background-color: var(--color-primery);
+    position: relative;
+}
+.logo {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+.logo_text {
+    font-size: 1.2rem;
+}
+.logo_higtliht {
+    color: orange;
+}
+/* --- ESTILOS DEL BOTÓN (HAMBURGUESA A "X") --- */
+.btn_toggle {
+    padding: 12px 18px 12px 6px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+.btn_box {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 18px;
+}
+.btn_inner,
+.btn_inner::before,
+.btn_inner::after {
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(
+        --color-secundary
+    ); /* Cambia a negro o gris si no se ve en tu header */
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+.btn_inner {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+.btn_inner::before {
+    content: "";
+    top: -7px;
+}
+.btn_inner::after {
+    content: "";
+    bottom: -7px;
+}
+
+/* --- ANIMACIÓN DEL BOTÓN CUANDO ESTÁ ACTIVO --- */
+/* Oculta la línea del centro */
+.btn_toggle.active .btn_inner {
+    background-color: transparent;
+}
+/* Gira la línea superior 45 grados */
+.btn_toggle.active .btn_inner::before {
+    transform: translateY(7px) rotate(45deg);
+}
+/* Gira la línea inferior -45 grados */
+.btn_toggle.active .btn_inner::after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- ESTILOS Y TRANSICIÓN DEL MENÚ --- */
+.navbar {
+    /* En lugar de display: none, usamos opacity y pointer-events para que haya animación */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px); /* Empieza un poco más arriba */
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 2rem;
+    z-index: 100;
+}
+
+/* Cuando el menú esté activo, se vuelve visible y cae suavemente */
+.navbar.active {
+    opacity: 1;
+    pointer-events: auto; /* Permite hacer clic en los enlaces */
+    transform: translateY(0); /* Regresa a su posición original */
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav_item a {
+    color: white;
+    font-size: 1.2rem;
+}
+.nav_item:hover a {
+    border-bottom: 1px solid orange;
+}
+.footer {
+    background-color: var(--color-secundary);
+    height: 150px;
+    color: var(--background);
+}
+
+/* --- ESTILOS COMPLEMENTARIOS PARA EL HERO --- */
+.hero {
+    min-height: 80vh; /* Ocupa casi toda la pantalla visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+
+    /* Fondo premium: Degradado oscuro simulando metal/taller moderno */
+    background: linear-gradient(135deg, #12161a 0%, #1c2329 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sutil textura de fondo (opcional, simula un entorno industrial) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    max-width: 600px;
+    z-index: 1;
+}
+
+/* Destacar palabras clave en el título */
+.hero h1 span {
+    color: orange;
+    display: block; /* Hace que resalte en su propia línea en móvil */
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: #a0aec0; /* Gris claro de alta legibilidad */
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* --- BOTÓN PRINCIPAL LLAMATIVO --- */
+.btn-principal {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #12161a;
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de destello brillante automático para captar la mirada */
+.btn-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: brilloSensor 3s infinite;
+}
+
+/* Animación del destello */
+@keyframes brilloSensor {
+    0% {
+        left: -30%;
+    }
+    30% {
+        left: 130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+/* Interacción al presionar o pasar el dedo/cursor */
+.btn-principal:hover,
+.btn-principal:active {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+    background-color: #ff9400;
+}
+/* --- SECCIÓN SERVICIOS: ROMPECABEZAS --- */
+.servicios {
+    padding: 4rem 1rem;
+    background-color: var(--background);
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 2rem;
+    color: #12161a;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* Contenedor principal: una sola columna compacta */
+.grid-servicios {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* --- LA ESTRUCTURA DE LA PIEZA --- */
+.tarjeta {
+    width: 100%;
+    position: relative;
+    padding: 4.5rem 2rem; /* Mucho espacio arriba y abajo para que respire el rompecabezas */
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* --- TRUCO COLORES ALTERNADOS PARA QUE SE DISTINGA CADA PIEZA --- */
+.tarjeta:nth-child(1) {
+    background-color: #1a2026;
+} /* Gris oscuro */
+.tarjeta:nth-child(2) {
+    background-color: #242c33;
+} /* Gris medio */
+.tarjeta:nth-child(3) {
+    background-color: #1a2026;
+} /* Gris oscuro */
+.tarjeta:nth-child(4) {
+    background-color: #242c33;
+} /* Gris medio */
+
+/* --- CORTES CON POLÍGONOS GEOMÉTRICOS --- */
+/* --- ENCAJE PERFECTO SIN ESPACIOS EN BLANCO --- */
+
+.pieza-superior {
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 85%,
+        62% 85%,
+        62% 100%,
+        38% 100%,
+        38% 85%,
+        0% 85%
+    );
+    /* Empuja la pieza de abajo hacia arriba eliminando el espacio blanco */
+    margin-bottom: -3.4rem;
+    z-index: 4;
+}
+
+.pieza-intermedia {
+    clip-path: polygon(
+        0% 15%,
+        38% 15%,
+        38% 30%,
+        62% 30%,
+        62% 15%,
+        100% 15%,
+        100% 85%,
+        62% 85%,
+        62% 100%,
+        38% 100%,
+        38% 85%,
+        0% 85%
+    );
+    /* Absorbe el espacio tanto arriba como abajo */
+    margin-bottom: -3.4rem;
+    position: relative;
+    z-index: 3;
+}
+/* Mantenemos el orden de capas correcto */
+.grid-servicios .tarjeta:nth-child(2) {
+    z-index: 3;
+}
+.grid-servicios .tarjeta:nth-child(3) {
+    z-index: 2;
+}
+
+.pieza-inferior {
+    clip-path: polygon(
+        0% 15%,
+        38% 15%,
+        38% 30%,
+        62% 30%,
+        62% 15%,
+        100% 15%,
+        100% 100%,
+        0% 100%
+    );
+    position: relative;
+    z-index: 1;
+}
+
+/* --- CAJITA DE TEXTO INTERNA (Contenido Visible) --- */
+.tarjeta h3,
+.tarjeta p {
+    position: relative;
+    z-index: 5;
+}
+
+.tarjeta::after {
+    content: "";
+    position: absolute;
+    /* Reducimos el tamaño de la caja interna para protegerla del área de las pestañas */
+    top: 4.2rem;
+    bottom: 4.2rem;
+    left: 1.5rem;
+    right: 1.5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.15
+    ); /* Fondo ligeramente más oscuro para contrastar */
+    border-radius: 6px;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Estilos de los textos internos */
+.tarjeta h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #a0aec0;
+}
+
+/* --- ESTADO :HOVER / :ACTIVE (Distingue cuál estamos usando) --- */
+.tarjeta:hover {
+    z-index: 10 !important; /* Se superpone limpiamente */
+    background-color: #2d3740; /* La pieza entera se aclara para resaltar */
+    cursor: pointer;
+}
+
+/* El recuadro del texto se ilumina con el borde grueso naranja del boceto */
+.tarjeta:hover::after {
+    border: 2px solid orange;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+}
+
+.tarjeta:hover h3 {
+    color: orange;
+}
+
+/* --- MEDIA QUERY PARA ESCRITORIO --- */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 85vh;
+        padding: 5rem 3rem;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+        max-width: 900px;
+    }
+    .hero h1 span {
+        display: inline; /* En pantallas grandes se integra en el flujo del texto */
+    }
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 700px;
+    }
+}
