@@ -256,8 +256,6 @@ header {
     background-color: #ff9400;
 }
 /* --- SECCIÓN SERVICIOS: ROMPECABEZAS --- */
-/* --- SECCIÓN SERVICIOS: ROMPECABEZAS REAL --- */
-/* --- SECCIÓN SERVICIOS: ROMPECABEZAS REAL CORREGIDO --- */
 .servicios {
     padding: 4rem 1rem;
     background-color: var(--background);
@@ -379,21 +377,117 @@ header {
 .tarjeta:hover h3 {
     color: orange;
 }
-/* --- MEDIA QUERY PARA ESCRITORIO --- */
-@media (min-width: 768px) {
-    .hero {
-        min-height: 85vh;
-        padding: 5rem 3rem;
+
+/* 1. El Track: Quitamos la máscara transparente para que se vea nítido en fondo claro */
+.testimonio_track {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0; /* Espacio extra para que respire el resplandor trasero */
+    position: relative;
+}
+
+/* 2. El Carrusel */
+/* Sección general de testimonios con fondo suavizado */
+.testimonio {
+    background-color: #d9dada; /* Cambiado de blanco puro a un gris suave premium */
+    padding: 60px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* El título ahora en un gris oscuro elegante para contrastar suavemente */
+.testimonio h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e262e; /* Mismo tono oscuro de tus tarjetas para amarrar el diseño */
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.carousel {
+    display: flex;
+    gap: 28px;
+    width: max-content;
+    animation: carruselInfinito 25s linear infinite;
+}
+/* REGLA DE PAUSA: Detiene la animación al poner el mouse encima o al mantener presionado */
+.testimonio_track:hover .carousel,
+.testimonio_track:active .carousel {
+    animation-play-state: paused !important;
+}
+
+
+/* 3. Las Tarjetas: Volvemos a tu gris oscuro base y añadimos el punto de luz trasero */
+.card {
+    flex: 0 0 320px;
+    background-color: #1e262e; /* Mantiene la coherencia con tus tarjetas anteriores */
+    border: 1px solid #28323d; /* Borde sutil idéntico al anterior */
+    border-radius: 16px;
+    padding: 28px;
+    user-select: none;
+    position: relative;
+    
+    /* EL ENFOQUE DE PUNTO TRASERO: Una sombra difuminada azulada/cian que simula la luz del fondo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+                0 0 40px rgba(0, 212, 255, 0.1); /* Resplandor sutil inicial */
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease;
+}
+
+/* 4. Efecto interactivo: El punto de luz trasero se intensifica al hacer Hover */
+.testimonio_track:hover .card {
+    opacity: 0.7; /* Opaca ligeramente el resto para centrar la atención */
+}
+
+.card:hover {
+    opacity: 1 !important;
+    transform: translateY(-10px) scale(1.02) !important;
+    background-color: #232d37; /* Se aclara ligeramente como tus anteriores botones */
+    
+    /* El punto trasero brilla con más fuerza al interactuar */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 
+                0 0 60px rgba(0, 212, 255, 0.35); 
+    cursor: grab;
+}
+
+/* 5. Textos visibles y legibles */
+.header_card {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff; /* Texto blanco que resalta perfectamente sobre el gris oscuro */
+    margin-bottom: 12px;
+}
+
+.header_description {
+    font-size: 0.95rem;
+    color: #b0c4de; /* Gris azulado claro para la descripción */
+    line-height: 1.6;
+}
+
+/* Detalle decorativo de comillas modificado para el fondo oscuro */
+.card::before {
+    content: "“";
+    position: absolute;
+    top: -5px;
+    right: 25px;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.04); /* Blanco ultra transparente */
+    font-family: serif;
+    line-height: 1;
+}
+
+
+/* La animación matemática: se mueve exactamente la mitad del contenedor (las primeras 4 tarjetas) */
+@keyframes carruselInfinito {
+    0% {
+        transform: translateX(0);
     }
-    .hero h1 {
-        font-size: 3.5rem;
-        max-width: 900px;
-    }
-    .hero h1 span {
-        display: inline; /* En pantallas grandes se integra en el flujo del texto */
-    }
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 700px;
+    100% {
+        /* Se desplaza hacia la izquierda el equivalente a las 4 tarjetas + sus espacios */
+        transform: translateX(calc(-50% - 12px)); 
     }
 }
