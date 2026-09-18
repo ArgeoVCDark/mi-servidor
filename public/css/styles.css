@@ -256,238 +256,456 @@ header {
     background-color: #ff9400;
 }
 /* --- SECCIÓN SERVICIOS: ROMPECABEZAS --- */
-.servicios {
-    padding: 4rem 1rem;
-    background-color: var(--background);
-    text-align: center;
+/* ==========================================================================
+   BLOQUE 1: ANIMACIONES GLOBALES Y SECCIÓN DE SERVICIOS
+   ========================================================================== */
+
+/* --- 1.1 Utilidades de Animación por Scroll (Intersection Observer) --- */
+.seccion-oculta {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.servicios h2 {
-    font-size: 2rem;
-    color: #12161a;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    font-weight: 800;
+.seccion-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.grid-servicios {
-    display: flex;
-    flex-direction: column;
-    max-width: 380px;
-    margin: 0 auto;
-}
-
-/* --- ESTRUCTURA DE LA PIEZA --- */
+/* --- 1.2 Sección Servicios: Tarjetas Base --- */
 .tarjeta {
-    width: 100%;
-    position: relative;
-    padding: 3rem 1.8rem;
+    position: relative; /* Base obligatoria para el posicionamiento de pestañas */
     border-radius: 12px;
-    box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    background-color: #1e262e;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-/* Colores alternados para contraste */
+/* Colores alternados para contraste de tarjetas */
 .tarjeta:nth-child(odd) { background-color: #1e262e; }
 .tarjeta:nth-child(even) { background-color: #28323d; }
 
-/* Control de capas estáticas para que ensamblen de arriba hacia abajo */
+/* --- 1.3 Control de Capas Estáticas (Ensamblado Tridimensional) --- */
 .grid-servicios .tarjeta:nth-child(1) { z-index: 4; }
 .grid-servicios .tarjeta:nth-child(2) { z-index: 3; }
 .grid-servicios .tarjeta:nth-child(3) { z-index: 2; }
 .grid-servicios .tarjeta:nth-child(4) { z-index: 1; }
 
-/* Superposición exacta */
+/* Superposición Exacta: Jala las tarjetas adyacentes hacia arriba */
 .tarjeta + .tarjeta {
     margin-top: -16px;
 }
 
-/* --- 1. PESTAÑA MACHO (INFERIOR) --- */
-/* Las piezas 1, 2 y 3 proyectan su pestaña sobre la pieza de abajo */
+/* --- 1.4 Pestañas de Conexión Estilo Rompecabezas --- */
 .tarjeta:not(:last-child)::after {
     content: "";
     position: absolute;
-    bottom: -16px;
+    bottom: -16px; /* Ajuste milimétrico sobre el margen negativo de la tarjeta de abajo */
     left: 50%;
     transform: translateX(-50%);
     width: 46px;
     height: 32px;
-    background-color: inherit; /* Mismo color que la pieza actual */
-    border-radius: 50%;
-    z-index: 6;
-    transition: all 0.3s ease;
+    background-color: inherit; /* Adopta automáticamente el color de su propia tarjeta */
+    border-radius: 50%; /* Transforma el bloque en un óvalo perfecto */
+    z-index: 6; /* Flota por encima del corte de la siguiente tarjeta */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* --- 2. HENDIDURA DE ENCAJE / RANURA (SUPERIOR) --- */
-/* Las piezas 2, 3 y 4 crean la sombra cóncava superior que recibe el macho */
-.tarjeta:not(:first-child)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 52px;
-    height: 20px;
-    /* Crea la ranura mediante una sombra interna negra transparente sin usar parches de color */
-    background: transparent;
-    box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 0 0 50% 50%;
-    z-index: 5;
-    transition: all 0.3s ease;
-}
-
-/* --- TEXTO DENTRO DE LA TARJETA --- */
-.tarjeta h3,
-.tarjeta p {
-    position: relative;
-    z-index: 7;
-}
-
-.tarjeta h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-    text-transform: uppercase;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.tarjeta p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #a0aec0;
-}
-
-/* --- EFECTO HOVER Y ACTIVE: ELEVACIÓN LIMPIA Y RESALTE --- */
+/* --- 1.5 Efecto Interactivo Hover para Servicios --- */
 .tarjeta:hover {
-    z-index: 10 !important; /* Trae la pieza completa al frente */
-    transform: translateY(-6px) scale(1.02);
-    background-color: #34404e;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 165, 0, 0.4);
-    outline: 2px solid orange;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 212, 255, 0.15);
+    z-index: 10 !important; /* Salta temporalmente al frente de todas las capas */
     cursor: pointer;
 }
+/* ==========================================================================
+   BLOQUE 2: CARRUSEL DE TESTIMONIOS (DISEÑO CONTINUO PREMIUM)
+   ========================================================================== */
 
-/* La pestaña del macho cambia de color en hover y adquiere el resalte naranja */
-.tarjeta:hover::after {
-    background-color: #34404e;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-.tarjeta:hover h3 {
-    color: orange;
-}
-
-/* 1. El Track: Quitamos la máscara transparente para que se vea nítido en fondo claro */
-.testimonio_track {
-    overflow: hidden;
-    width: 100%;
-    padding: 40px 0; /* Espacio extra para que respire el resplandor trasero */
-    position: relative;
-}
-
-/* 2. El Carrusel */
-/* Sección general de testimonios con fondo suavizado */
 .testimonio {
-    background-color: #d9dada; /* Cambiado de blanco puro a un gris suave premium */
+    background-color: #f4f6f9; /* Fondo gris claro suavizado para amortiguar el brillo */
     padding: 60px 20px;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
-/* El título ahora en un gris oscuro elegante para contrastar suavemente */
 .testimonio h2 {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1e262e; /* Mismo tono oscuro de tus tarjetas para amarrar el diseño */
+    color: #1e262e;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
-    text-transform: uppercase;
+}
+
+.testimonio_track {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
 }
 
 .carousel {
     display: flex;
     gap: 28px;
     width: max-content;
-    animation: carruselInfinito 25s linear infinite;
+    animation: carruselInfinito 25s linear infinite; /* Movimiento constante de marquesina */
 }
-/* REGLA DE PAUSA: Detiene la animación al poner el mouse encima o al mantener presionado */
+
+/* Pausa Absoluta en Hover/Active comandada por CSS */
 .testimonio_track:hover .carousel,
 .testimonio_track:active .carousel {
     animation-play-state: paused !important;
 }
 
-
-/* 3. Las Tarjetas: Volvemos a tu gris oscuro base y añadimos el punto de luz trasero */
+/* Tarjetas de Opinión con Enfoque de Resplandor Trasero */
 .card {
     flex: 0 0 320px;
-    background-color: #1e262e; /* Mantiene la coherencia con tus tarjetas anteriores */
-    border: 1px solid #28323d; /* Borde sutil idéntico al anterior */
+    background-color: #1e262e;
+    border: 1px solid #28323d;
     border-radius: 16px;
     padding: 28px;
     user-select: none;
     position: relative;
     
-    /* EL ENFOQUE DE PUNTO TRASERO: Una sombra difuminada azulada/cian que simula la luz del fondo */
+    /* Efecto Backlight inicial tenue */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
-                0 0 40px rgba(0, 212, 255, 0.1); /* Resplandor sutil inicial */
+                0 0 40px rgba(0, 212, 255, 0.1);
     
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
                 background-color 0.3s ease;
 }
 
-/* 4. Efecto interactivo: El punto de luz trasero se intensifica al hacer Hover */
 .testimonio_track:hover .card {
-    opacity: 0.7; /* Opaca ligeramente el resto para centrar la atención */
+    opacity: 0.7; /* Opaca las tarjetas inactivas para centralizar la mirada */
 }
 
 .card:hover {
     opacity: 1 !important;
     transform: translateY(-10px) scale(1.02) !important;
-    background-color: #232d37; /* Se aclara ligeramente como tus anteriores botones */
+    background-color: #232d37;
     
-    /* El punto trasero brilla con más fuerza al interactuar */
+    /* El punto de luz trasero se expande e intensifica */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 
                 0 0 60px rgba(0, 212, 255, 0.35); 
     cursor: grab;
 }
 
-/* 5. Textos visibles y legibles */
+/* Tipografía Interna */
 .header_card {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ffffff; /* Texto blanco que resalta perfectamente sobre el gris oscuro */
+    color: #ffffff;
     margin-bottom: 12px;
 }
 
 .header_description {
     font-size: 0.95rem;
-    color: #b0c4de; /* Gris azulado claro para la descripción */
+    color: #b0c4de;
     line-height: 1.6;
 }
 
-/* Detalle decorativo de comillas modificado para el fondo oscuro */
 .card::before {
     content: "“";
     position: absolute;
     top: -5px;
     right: 25px;
     font-size: 5rem;
-    color: rgba(255, 255, 255, 0.04); /* Blanco ultra transparente */
+    color: rgba(255, 255, 255, 0.04);
     font-family: serif;
     line-height: 1;
 }
 
-
-/* La animación matemática: se mueve exactamente la mitad del contenedor (las primeras 4 tarjetas) */
+/* Bucle infinito de la marquesina */
 @keyframes carruselInfinito {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Se desplaza hacia la izquierda el equivalente a las 4 tarjetas + sus espacios */
-        transform: translateX(calc(-50% - 12px)); 
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12px)); }
+}
+/* ==========================================================================
+   BLOQUE 3: SECCIÓN DE CONTACTO, FOOTER Y RESPONSIVIDAD (MOBILE-FIRST)
+   ========================================================================== */
+
+/* --- 3.1 Contenedor Base de Contacto --- */
+.contacto {
+    background-color: #f4f6f9;
+    padding: 40px 16px;        
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.contacto > h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e262e;
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Cuadrícula base apilada verticalmente para celulares */
+.contacto_grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 24px;
+    align-items: start;
+}
+
+/* Información de Contacto (Caja Blanca) */
+.contacto_info {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.01);
+}
+
+.contacto_info h3 {
+    font-size: 1.25rem;
+    color: #1e262e;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-left: 4px solid #00d4ff; /* Detalle de identidad de marca */
+    padding-left: 10px;
+}
+
+.inf_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inf_item {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    word-break: break-word; /* Protege pantallas mini contra URLs largas */
+}
+
+.inf_remarcado {
+    display: block; 
+    font-weight: 700;
+    color: #1e262e;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.link-contacto {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Formulario de Cita (Caja Oscura) */
+.contacto_formulario {
+    background-color: #1e262e;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #28323d;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto_formulario::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contacto_formulario h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#form-cita {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #b0c4de;
+}
+
+/* Usabilidad e interacción táctil amigable (Altura > 44px) */
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #151a20;
+    border: 1px solid #28323d;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem; /* Al menos 16px previene el zoom forzado en navegadores móviles */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none; /* Mitiga discrepancias de renderizado en iOS */
+}
+
+.campo textarea { resize: vertical; }
+.campo input::placeholder, .campo textarea::placeholder { color: #4a5568; }
+
+/* Focus State UX (Efecto anillo cian neón) */
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15);
+}
+
+.campo select option { background-color: #1e262e; color: #ffffff; }
+
+/* Botón de Envío Interactivo */
+.btn-enviar {
+    margin-top: 8px;
+    padding: 14px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0084ff 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-enviar:disabled {
+    background: #28323d;
+    color: #718096;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* --- 3.2 Estilos del Footer Base Móvil --- */
+.footer {
+    background-color: #1e262e;
+    color: #b0c4de;            
+    padding: 60px 20px 20px 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+    border-top: 2px solid #28323d; 
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.footer_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.footer_brand .footer_logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer_brand .footer_logo span { color: #00d4ff; }
+.footer_brand .footer_tagline { font-size: 0.95rem; line-height: 1.6; color: #a0aec0; max-width: 300px; }
+
+.footer_nav h4, .footer_schedule h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_links a {
+    color: #b0c4de;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.footer_links a:hover { color: #00d4ff; padding-left: 6px; }
+.footer_schedule p { font-size: 0.95rem; line-height: 1.6; margin: 0 0 8px 0; }
+.footer_urgencias { color: #ffffff; font-weight: 600; margin-top: 14px !important; font-size: 0.9rem !important; }
+
+.footer_bottom {
+    border-top: 1px solid #28323d;
+    padding-top: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_bottom p { font-size: 0.85rem; color: #718096; margin: 0; line-height: 1.5; }
+.footer_developer { font-style: italic; color: #a0aec0 !important; }
+
+
+/* --- 3.3 REGLAS DE CRECIMIENTO PROGRESIVO (PANTALLAS GRANDES DESKTOP >= 768px) --- */
+@media (min-width: 768px) {
+    
+    /* Escalabilidad del Contenedor Contacto */
+    .contacto { padding: 80px 24px; }
+    .contacto > h2 { font-size: 2.4rem; margin-bottom: 48px; }
+
+    /* Transición horizontal asimétrica: 40% datos de contacto y 60% el formulario */
+    .contacto_grid { grid-template-columns: 4fr 6fr; gap: 40px; }
+    .contacto_info, .contacto_formulario { padding: 40px; border-radius: 20px; }
+    .contacto_info h3, .contacto_formulario h3 { font-size: 1.4rem; }
+    .link-contacto:hover { color: #00d4ff; text-decoration: underline; }
+    .btn-enviar:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); filter: brightness(1.05); }
+
+    /* Escalabilidad del Footer */
+    .footer { padding: 80px 40px 30px 40px; }
+    .footer_grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } /* Despliega los 3 bloques en paralelo */
+    .footer_bottom { flex-direction: row; justify-content: space-between; text-align: left; } /* Extiende la barra final */
 }

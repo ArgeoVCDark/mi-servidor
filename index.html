@@ -1,220 +1,289 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mecánica Premium | Taller Diésel y Gasolina</title>
-        <!-- El servidor buscará esto directo en la carpeta public/css/ -->
-        <link rel="stylesheet" href="public/css/styles.css" />
-    </head>
-    <body>
-        <header>
-            <p class="logo">
-                <span class="logo_text">👨‍🔧Mecánica</span>
-                <span class="logo_higtliht">Premium</span>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mecánica Premium | Taller Diésel y Gasolina</title>
+    <!-- El servidor buscará esto directo en la carpeta public/css/ -->
+    <link rel="stylesheet" href="public/css/styles.css" />
+</head>
+
+<body>
+    <header>
+        <p class="logo">
+            <span class="logo_text">👨‍🔧Mecánica</span>
+            <span class="logo_higtliht">Premium</span>
+        </p>
+        <button class="btn_toggle">
+            <span class="btn_box">
+                <span class="btn_inner"></span>
+            </span>
+        </button>
+        <nav class="navbar">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="#hero">Inicio</a></li>
+                <li class="nav_item"><a href="#servicios">Servicios</a></li>
+                <li class="nav_item">
+                    <a href="#testimonios">Testimonios</a>
+                </li>
+                <li class="nav_item"><a href="#contacto">Contacto</a></li>
+                <li class="nav_item">
+                    <a href="#agendar" class="btn-nav">Agendar Cita</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Bienvenida -->
+        <section class="hero">
+            <h1>Especialistas en Motores <span>Gasolina y Diésel</span></h1>
+            <p>
+                Reparamos tu auto con tecnología avanzada. Servicio rápido,
+                honesto y garantizado.
             </p>
-            <button class="btn_toggle">
-                <span class="btn_box">
-                    <span class="btn_inner"></span>
-                </span>
-            </button>
-            <nav class="navbar">
-                <ul class="nav_list">
-                    <li class="nav_item"><a href="#hero">Inicio</a></li>
-                    <li class="nav_item"><a href="#servicios">Servicios</a></li>
-                    <li class="nav_item">
-                        <a href="#testimonios">Testimonios</a>
-                    </li>
-                    <li class="nav_item"><a href="#contacto">Contacto</a></li>
-                    <li class="nav_item">
-                        <a href="#agendar" class="btn-nav">Agendar Cita</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+            <a href="#contacto" class="btn-principal">Agendar revisión ahora</a>
+        </section>
 
-        <main>
-            <!-- Sección de Bienvenida -->
-            <section class="hero">
-                <h1>Especialistas en Motores <span>Gasolina y Diésel</span></h1>
-                <p>
-                    Reparamos tu auto con tecnología avanzada. Servicio rápido,
-                    honesto y garantizado.
-                </p>
-                <a href="#contacto" class="btn-principal"
-                    >Agendar revisión ahora</a
-                >
-            </section>
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-servicios">
+                <!-- Pieza 1 -->
+                <article class="tarjeta pieza-superior">
+                    <div class="contenido-visible">
+                        <h3>Mantenimiento Diésel</h3>
+                        <p>
+                            Especialistas en pérdida de potencia, humo negro
+                            y afinación de sistemas de inyección.
+                        </p>
+                    </div>
+                </article>
 
-            <!-- Sección de Servicios -->
-            <section id="servicios" class="servicios">
-                <h2>Nuestros Servicios</h2>
-                <div class="grid-servicios">
-                    <!-- Pieza 1 -->
-                    <article class="tarjeta pieza-superior">
-                        <div class="contenido-visible">
-                            <h3>Mantenimiento Diésel</h3>
-                            <p>
-                                Especialistas en pérdida de potencia, humo negro
-                                y afinación de sistemas de inyección.
-                            </p>
+                <!-- Pieza 2 -->
+                <article class="tarjeta pieza-intermedia">
+                    <div class="contenido-visible">
+                        <h3>Motores de Gasolina</h3>
+                        <p>
+                            Diagnóstico por computadora, frenos, clutch,
+                            suspensión y fallas eléctricas.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Pieza 3 -->
+                <article class="tarjeta pieza-intermedia">
+                    <div class="contenido-visible">
+                        <h3>Sistema Eléctrico</h3>
+                        <p>
+                            Reparación de alternadores, marchas, luces,
+                            cortos circuitos y escaneo de módulos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Pieza 4 -->
+                <article class="tarjeta pieza-inferior">
+                    <div class="contenido-visible">
+                        <h3>Frenos y Suspensión</h3>
+                        <p>
+                            Cambio de balatas, rectificado de discos,
+                            amortiguadores y alineación segura.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección del testimonio -->
+        <section class="testimonio" id="testimonio">
+            <h2>Testimonios</h2>
+            <div class="testimonio_track">
+                <div class="carousel">
+                    <!-- Tus 4 tarjetas originales -->
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 01</h3>
+                            <p class="header_description">Descripcion...</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 02</h3>
+                            <p class="header_description">Descripcion...</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 03</h3>
+                            <p class="header_description">Descripcion...</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 04</h3>
+                            <p class="header_description">Descripcion...</p>
                         </div>
                     </article>
 
-                    <!-- Pieza 2 -->
-                    <article class="tarjeta pieza-intermedia">
-                        <div class="contenido-visible">
-                            <h3>Motores de Gasolina</h3>
-                            <p>
-                                Diagnóstico por computadora, frenos, clutch,
-                                suspensión y fallas eléctricas.
-                            </p>
+                    <!-- CLONES: Copia exactamente las mismas 4 tarjetas abajo -->
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 01</h3>
+                            <p class="header_description">Descripcion...</p>
                         </div>
                     </article>
-
-                    <!-- Pieza 3 -->
-                    <article class="tarjeta pieza-intermedia">
-                        <div class="contenido-visible">
-                            <h3>Sistema Eléctrico</h3>
-                            <p>
-                                Reparación de alternadores, marchas, luces,
-                                cortos circuitos y escaneo de módulos.
-                            </p>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 02</h3>
+                            <p class="header_description">Descripcion...</p>
                         </div>
                     </article>
-
-                    <!-- Pieza 4 -->
-                    <article class="tarjeta pieza-inferior">
-                        <div class="contenido-visible">
-                            <h3>Frenos y Suspensión</h3>
-                            <p>
-                                Cambio de balatas, rectificado de discos,
-                                amortiguadores y alineación segura.
-                            </p>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 03</h3>
+                            <p class="header_description">Descripcion...</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="header_article">
+                            <h3 class="header_card">Testimoni 04</h3>
+                            <p class="header_description">Descripcion...</p>
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
 
-            <!-- Sección del testimonio -->
-            <section class="testimonio" id="testimonio">
-                <h2>Testimonios</h2>
-                <div class="testimonio_track">
-    <div class="carousel">
-        <!-- Tus 4 tarjetas originales -->
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 01</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 02</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 03</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 04</h3><p class="header_description">Descripcion...</p></div></article>
-        
-        <!-- CLONES: Copia exactamente las mismas 4 tarjetas abajo -->
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 01</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 02</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 03</h3><p class="header_description">Descripcion...</p></div></article>
-        <article class="card"><div class="header_article"><h3 class="header_card">Testimoni 04</h3><p class="header_description">Descripcion...</p></div></article>
-    </div>
-</div>
+        </section>
 
-            </section>
+        <!-- 
+  [BUENA PRÁCTICA 2026]: Se usa la etiqueta <section> con un 'aria-labelledby' apuntando al h2. 
+  Esto ayuda a los lectores de pantalla a saber exactamente de qué trata esta sección.
+-->
+        <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+            <h2 id="titulo-contacto">Solicitar Cita de Servicio</h2>
+            <!-- NUEVO: Contenedor Wrapper de la cuadrícula -->
+            <div class="contacto_grid">
 
-            <!-- Sección del Formulario -->
-            <section id="contacto" class="contacto">
-                <h2>Solicitar Cita de Servicio</h2>
-                <div>
-                    <h3>Informacion de contacto.</h3>
+                <!-- Contenedor de Información Física del Taller -->
+                <div class="contacto_info">
+                    <h3>Información de contacto</h3>
                     <ul class="inf_list">
                         <li class="inf_item">
-                            <span class="inf_remarcado">Direccion:</span>Col.
-                            Centro, Tapachula, Chiapas, Mexico, C.P.: 30700
+                            <strong class="inf_remarcado">Dirección:</strong> Col. Centro, Tapachula, Chiapas, México,
+                            C.P.: 30700
+                        </li>
+                        <!-- [BUENA PRÁCTICA]: Usar enlaces dinámicos como 'tel:' y 'mailto:' para que en móviles abran la app correcta al pulsar -->
+                        <li class="inf_item">
+                            <strong class="inf_remarcado">Tel:</strong> <a href="tel:9621234567"
+                                class="link-contacto">9621234567</a>
                         </li>
                         <li class="inf_item">
-                            <span class="inf_remarcado">Tel: </span>9621234567
+                            <strong class="inf_remarcado">Email:</strong> <a href="mailto:Taller@email.com"
+                                class="link-contacto">Taller@email.com</a>
                         </li>
                         <li class="inf_item">
-                            <span class="inf_remarcado">Email: </span
-                            >Taller@email.com
-                        </li>
-                        <li class="inf_item">
-                            <span class="inf_remarcado">Facebook: </span
-                            >TallerPremium
-                        </li>
-                        <li class="inf_item">
-                            <span class="inf_remarcado">otros:</span>Otros
+                            <strong class="inf_remarcado">Facebook:</strong> <a href="https://facebook.com"
+                                target="_blank" rel="noopener noreferrer" class="link-contacto">TallerPremium</a>
                         </li>
                     </ul>
                 </div>
-                <div id="agendar">
+
+                <!-- Contenedor del Formulario Interactivo -->
+                <div id="agendar" class="contacto_formulario">
                     <h3>Agendar Cita</h3>
 
-                    <form action="/api/nueva-cita" method="POST">
+                    <!-- 
+          [EXPLICACIÓN BACKEND]: 
+          - 'action': La URL o "Endpoint" de tu servidor que procesará los datos.
+          - 'method="POST"': El método HTTP correcto para CREAR recursos en el servidor de forma segura.
+          - 'novalidate': Se añade si vas a controlar las validaciones personalizadas con JavaScript (opcional).
+        -->
+                    <form id="form-cita" action="/api/nueva-cita" method="POST">
+
+                        <!-- Campo: Nombre -->
                         <div class="campo">
                             <label for="nombre">Nombre Completo:</label>
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                required
-                                placeholder="Ej. Juan Pérez"
-                            />
+                            <!-- 'name="nombre"': ES VITAL. Es la llave (key) con la que el Backend leerá este valor específico -->
+                            <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="80"
+                                placeholder="Ej. Juan Pérez" />
                         </div>
 
+                        <!-- Campo: Teléfono -->
                         <div class="campo">
                             <label for="telefono">Número de Teléfono:</label>
-                            <input
-                                type="tel"
-                                id="telefono"
-                                name="telefono"
-                                required
-                                pattern="[0-9]{10}"
-                                placeholder="Ej. 9621234567"
-                            />
+                            <!-- 'pattern': Regex que obliga a que sean exactamente 10 dígitos numéricos antes de enviar -->
+                            <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}"
+                                placeholder="Ej. 9621234567" />
                         </div>
 
+                        <!-- Campo: Servicio -->
                         <div class="campo">
-                            <label for="servicio"
-                                >Selecciona el Servicio:</label
-                            >
+                            <label for="servicio">Selecciona el Servicio:</label>
                             <select id="servicio" name="servicio" required>
-                                <option value="">
-                                    -- Selecciona una opción --
-                                </option>
-                                <option value="gasolina">
-                                    Servicio Gasolina
-                                </option>
+                                <!-- value="" vacío obliga al atributo 'required' a marcar error si no eligen una opción real -->
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="gasolina">Servicio Gasolina</option>
                                 <option value="diesel">Servicio Diésel</option>
-                                <option value="diagnostico">
-                                    Diagnóstico General
-                                </option>
+                                <option value="diagnostico">Diagnóstico General</option>
                             </select>
                         </div>
 
+                        <!-- Campo: Descripción -->
                         <div class="campo">
-                            <label for="descripcion"
-                                >¿Qué síntomas tiene tu carro?</label
-                            >
-                            <textarea
-                                id="descripcion"
-                                name="descripcion"
-                                rows="4"
-                                required
-                                placeholder="Ej. El motor pierde potencia al acelerar..."
-                            ></textarea>
+                            <label for="descripcion">¿Qué síntomas tiene tu carro?</label>
+                            <textarea id="descripcion" name="descripcion" rows="4" required maxlength="500"
+                                placeholder="Ej. El motor pierde potencia al acelerar..."></textarea>
                         </div>
 
+                        <!-- Botón de Envío -->
                         <button type="submit" class="btn-enviar">
                             Enviar Solicitud
                         </button>
                     </form>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
 
-        <footer class="footer">
-            <p>
-                &copy; 2026 Mecánica Premium. Calle Central #123, Tapachula,
-                Chiapas.
-            </p>
-        </footer>
-        <script src="public/js/script.js"></script>
-    </body>
+    </main>
+
+  <footer class="footer">
+    <div class="footer_grid">
+        <!-- Bloque 1: Identidad del Taller -->
+        <div class="footer_brand">
+            <span class="footer_logo">Mecánica <span>Premium</span></span>
+            <p class="footer_tagline">Tecnología y precisión para el cuidado de tu vehículo.</p>
+        </div>
+
+        <!-- Bloque 2: Navegación Rápida interna (Mejora la UX) -->
+        <div class="footer_nav">
+            <h4>Enlaces Rápidos</h4>
+            <ul class="footer_links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonio">Testimonios</a></li>
+                <li><a href="#contacto">Agendar Cita</a></li>
+            </ul>
+        </div>
+
+        <!-- Bloque 3: Horarios de Atención -->
+        <div class="footer_schedule">
+            <h4>Horario de Atención</h4>
+            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+            <p>Sábados: 8:00 AM - 2:00 PM</p>
+            <p class="footer_urgencias">🚨 Emergencias 24/7 vía WhatsApp</p>
+        </div>
+    </div>
+
+    <!-- Barra Inferior de Copyright y Ubicación -->
+    <div class="footer_bottom">
+        <p>&copy; 2026 Mecánica Premium. Calle Central #123, Col. Centro, Tapachula, Chiapas, México.</p>
+        <p class="footer_developer">Desarrollado con ❤️ para Fullstack</p>
+    </div>
+</footer>
+
+    <script src="public/js/script.js"></script>
+</body>
+
 </html>
