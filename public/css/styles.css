@@ -1,46 +1,59 @@
 :root {
     --background: hwb(240 78% 19%);
-    --color-primery: hwb(60 64% 11%);
+    --color-primery: #0084ff;
     --color-secundary: #4b370dec;
+    --color-primary-lihgt: #00d4ff;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     font-family: sans-serif;
     background-color: --background;
 }
+
 a {
     text-decoration: none;
 }
+
 li {
     list-style: none;
 }
+
 header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     text-align: center;
-    padding: 1.5rem 0.8rem 1.5rem 0.5rem;
+    padding: 1.5rem 3rem 1.5rem 3rem;
     background-color: var(--color-primery);
     position: relative;
 }
+
 .logo {
     text-transform: uppercase;
-    font-size: 1.1rem;
-    font-weight: 700;
     display: flex;
     flex-direction: column;
 }
+
 .logo_text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary-lihgt);
 }
+
 .logo_higtliht {
-    color: orange;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 7px;
 }
+
 /* --- ESTILOS DEL BOTÓN (HAMBURGUESA A "X") --- */
 .btn_toggle {
     padding: 12px 18px 12px 6px;
@@ -48,12 +61,14 @@ header {
     cursor: pointer;
     background: transparent;
 }
+
 .btn_box {
     display: block;
     position: relative;
     width: 24px;
     height: 18px;
 }
+
 .btn_inner,
 .btn_inner::before,
 .btn_inner::after {
@@ -61,22 +76,24 @@ header {
     width: 24px;
     height: 3px;
     border-radius: 3px;
-    background-color: var(
-        --color-secundary
-    ); /* Cambia a negro o gris si no se ve en tu header */
+    background-color: var(--color-secundary);
+    /* Cambia a negro o gris si no se ve en tu header */
     transition:
         transform 0.3s ease,
         opacity 0.3s ease;
 }
+
 .btn_inner {
     top: 50%;
     transform: translateY(-50%);
     left: 0;
 }
+
 .btn_inner::before {
     content: "";
     top: -7px;
 }
+
 .btn_inner::after {
     content: "";
     bottom: -7px;
@@ -87,10 +104,12 @@ header {
 .btn_toggle.active .btn_inner {
     background-color: transparent;
 }
+
 /* Gira la línea superior 45 grados */
 .btn_toggle.active .btn_inner::before {
     transform: translateY(7px) rotate(45deg);
 }
+
 /* Gira la línea inferior -45 grados */
 .btn_toggle.active .btn_inner::after {
     transform: translateY(-7px) rotate(-45deg);
@@ -101,7 +120,8 @@ header {
     /* En lugar de display: none, usamos opacity y pointer-events para que haya animación */
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px); /* Empieza un poco más arriba */
+    transform: translateY(-10px);
+    /* Empieza un poco más arriba */
     transition:
         opacity 0.3s ease,
         transform 0.3s ease;
@@ -118,8 +138,10 @@ header {
 /* Cuando el menú esté activo, se vuelve visible y cae suavemente */
 .navbar.active {
     opacity: 1;
-    pointer-events: auto; /* Permite hacer clic en los enlaces */
-    transform: translateY(0); /* Regresa a su posición original */
+    pointer-events: auto;
+    /* Permite hacer clic en los enlaces */
+    transform: translateY(0);
+    /* Regresa a su posición original */
 }
 
 .nav_list {
@@ -132,9 +154,12 @@ header {
     color: white;
     font-size: 1.2rem;
 }
+
 .nav_item:hover a {
-    border-bottom: 1px solid orange;
+    padding: 0 8px 0;
+    border-bottom: 3px solid orange;
 }
+
 .footer {
     background-color: var(--color-secundary);
     height: 150px;
@@ -143,7 +168,8 @@ header {
 
 /* --- ESTILOS COMPLEMENTARIOS PARA EL HERO --- */
 .hero {
-    min-height: 80vh; /* Ocupa casi toda la pantalla visible */
+    min-height: 80vh;
+    /* Ocupa casi toda la pantalla visible */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -186,12 +212,14 @@ header {
 /* Destacar palabras clave en el título */
 .hero h1 span {
     color: orange;
-    display: block; /* Hace que resalte en su propia línea en móvil */
+    display: block;
+    /* Hace que resalte en su propia línea en móvil */
 }
 
 .hero p {
     font-size: 1.05rem;
-    color: #a0aec0; /* Gris claro de alta legibilidad */
+    color: #a0aec0;
+    /* Gris claro de alta legibilidad */
     line-height: 1.6;
     margin-bottom: 2.5rem;
     max-width: 500px;
@@ -206,7 +234,7 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     color: #12161a;
-    background-color: orange;
+    background: linear-gradient(135deg, #00d4ff 0%, #0084ff 100%);
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
     transition:
@@ -225,12 +253,10 @@ header {
     left: -50%;
     width: 20%;
     height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: skewX(-25deg);
     animation: brilloSensor 3s infinite;
 }
@@ -240,9 +266,11 @@ header {
     0% {
         left: -30%;
     }
+
     30% {
         left: 130%;
     }
+
     100% {
         left: 130%;
     }
@@ -255,12 +283,31 @@ header {
     box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
     background-color: #ff9400;
 }
+
 /* --- SECCIÓN SERVICIOS: ROMPECABEZAS --- */
 /* ==========================================================================
    BLOQUE 1: ANIMACIONES GLOBALES Y SECCIÓN DE SERVICIOS
    ========================================================================== */
 
 /* --- 1.1 Utilidades de Animación por Scroll (Intersection Observer) --- */
+.servicios {
+    background-color: #f4f6f9;
+    /* Fondo gris claro suavizado para amortiguar el brillo */
+    padding: 60px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.servicios h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e262e;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+
+}
+
 .seccion-oculta {
     opacity: 0;
     transform: translateY(30px);
@@ -274,58 +321,112 @@ header {
 
 /* --- 1.2 Sección Servicios: Tarjetas Base --- */
 .tarjeta {
-    position: relative; /* Base obligatoria para el posicionamiento de pestañas */
+    position: relative;
+    /* Base obligatoria para el posicionamiento de pestañas */
     border-radius: 12px;
-    padding: 24px;
+    padding: 3rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                background-color 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
 }
 
 /* Colores alternados para contraste de tarjetas */
-.tarjeta:nth-child(odd) { background-color: #1e262e; }
-.tarjeta:nth-child(even) { background-color: #28323d; }
+.tarjeta:nth-child(odd) {
+    --color-actual: var(--color-primery);
+    --color-anterior: var(--color-primary-lihgt);
+    background-color: var(--color-actual);
+}
+
+.tarjeta:nth-child(even) {
+    --color-actual: var(--color-primary-lihgt);
+    --color-anterior: var(--color-primery);
+    background-color: var(--color-actual);
+}
 
 /* --- 1.3 Control de Capas Estáticas (Ensamblado Tridimensional) --- */
-.grid-servicios .tarjeta:nth-child(1) { z-index: 4; }
-.grid-servicios .tarjeta:nth-child(2) { z-index: 3; }
-.grid-servicios .tarjeta:nth-child(3) { z-index: 2; }
-.grid-servicios .tarjeta:nth-child(4) { z-index: 1; }
+.grid-servicios .tarjeta:nth-child(1) {
+    z-index: 4;
+}
+
+.grid-servicios .tarjeta:nth-child(2) {
+    z-index: 3;
+}
+
+.grid-servicios .tarjeta:nth-child(3) {
+    z-index: 2;
+}
+
+.grid-servicios .tarjeta:nth-child(4) {
+    z-index: 1;
+}
+
+.contenido-visible h3 {
+    padding: 3rem 0 2rem;
+}
+
 
 /* Superposición Exacta: Jala las tarjetas adyacentes hacia arriba */
-.tarjeta + .tarjeta {
+.tarjeta+.tarjeta {
     margin-top: -16px;
 }
 
 /* --- 1.4 Pestañas de Conexión Estilo Rompecabezas --- */
-.tarjeta:not(:last-child)::after {
+.tarjeta:not(:first-child)::before {
     content: "";
     position: absolute;
-    bottom: -16px; /* Ajuste milimétrico sobre el margen negativo de la tarjeta de abajo */
+    top: -16px;
+    /* Ajuste milimétrico sobre el margen negativo de la tarjeta de abajo */
+
     left: 50%;
     transform: translateX(-50%);
     width: 46px;
     height: 32px;
-    background-color: inherit; /* Adopta automáticamente el color de su propia tarjeta */
-    border-radius: 50%; /* Transforma el bloque en un óvalo perfecto */
-    z-index: 6; /* Flota por encima del corte de la siguiente tarjeta */
+    background-color: var(--color-anterior);
+    /* Adopta automáticamente el color de su propia tarjeta */
+    border-radius: 50%;
+    /* Transforma el bloque en un óvalo perfecto */
+    z-index: 10;
+    /* Flota por encima del corte de la siguiente tarjeta */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.tarjeta:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    /* Ajuste milimétrico sobre el margen negativo de la tarjeta de abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 32px;
+    background-color: var(--color-actual);
+    /* Adopta automáticamente el color de su propia tarjeta */
+    border-radius: 50%;
+    /* Transforma el bloque en un óvalo perfecto */
+    z-index: 6;
+    /* Flota por encima del corte de la siguiente tarjeta */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 
 /* --- 1.5 Efecto Interactivo Hover para Servicios --- */
 .tarjeta:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 212, 255, 0.15);
-    z-index: 10 !important; /* Salta temporalmente al frente de todas las capas */
+    z-index: 10 !important;
+    /* Salta temporalmente al frente de todas las capas */
     cursor: pointer;
 }
+
 /* ==========================================================================
    BLOQUE 2: CARRUSEL DE TESTIMONIOS (DISEÑO CONTINUO PREMIUM)
    ========================================================================== */
 
 .testimonio {
-    background-color: #f4f6f9; /* Fondo gris claro suavizado para amortiguar el brillo */
+    background-color: #f4f6f9;
+    /* Fondo gris claro suavizado para amortiguar el brillo */
     padding: 60px 20px;
     max-width: 100%;
     margin: 0 auto;
@@ -351,7 +452,8 @@ header {
     display: flex;
     gap: 28px;
     width: max-content;
-    animation: carruselInfinito 25s linear infinite; /* Movimiento constante de marquesina */
+    animation: carruselInfinito 25s linear infinite;
+    /* Movimiento constante de marquesina */
 }
 
 /* Pausa Absoluta en Hover/Active comandada por CSS */
@@ -369,28 +471,29 @@ header {
     padding: 28px;
     user-select: none;
     position: relative;
-    
+
     /* Efecto Backlight inicial tenue */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
-                0 0 40px rgba(0, 212, 255, 0.1);
-    
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                background-color 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(0, 212, 255, 0.1);
+
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        background-color 0.3s ease;
 }
 
 .testimonio_track:hover .card {
-    opacity: 0.7; /* Opaca las tarjetas inactivas para centralizar la mirada */
+    opacity: 0.7;
+    /* Opaca las tarjetas inactivas para centralizar la mirada */
 }
 
 .card:hover {
     opacity: 1 !important;
     transform: translateY(-10px) scale(1.02) !important;
     background-color: #232d37;
-    
+
     /* El punto de luz trasero se expande e intensifica */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 
-                0 0 60px rgba(0, 212, 255, 0.35); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25),
+        0 0 60px rgba(0, 212, 255, 0.35);
     cursor: grab;
 }
 
@@ -421,9 +524,15 @@ header {
 
 /* Bucle infinito de la marquesina */
 @keyframes carruselInfinito {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 12px)); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 12px));
+    }
 }
+
 /* ==========================================================================
    BLOQUE 3: SECCIÓN DE CONTACTO, FOOTER Y RESPONSIVIDAD (MOBILE-FIRST)
    ========================================================================== */
@@ -431,13 +540,13 @@ header {
 /* --- 3.1 Contenedor Base de Contacto --- */
 .contacto {
     background-color: #f4f6f9;
-    padding: 40px 16px;        
+    padding: 40px 16px;
     max-width: 1200px;
     margin: 0 auto;
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-.contacto > h2 {
+.contacto>h2 {
     font-size: 1.8rem;
     font-weight: 800;
     color: #1e262e;
@@ -450,7 +559,7 @@ header {
 /* Cuadrícula base apilada verticalmente para celulares */
 .contacto_grid {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 24px;
     align-items: start;
 }
@@ -469,7 +578,8 @@ header {
     color: #1e262e;
     margin-bottom: 20px;
     font-weight: 700;
-    border-left: 4px solid #00d4ff; /* Detalle de identidad de marca */
+    border-left: 4px solid #00d4ff;
+    /* Detalle de identidad de marca */
     padding-left: 10px;
 }
 
@@ -486,11 +596,12 @@ header {
     font-size: 0.95rem;
     color: #4a5568;
     line-height: 1.5;
-    word-break: break-word; /* Protege pantallas mini contra URLs largas */
+    word-break: break-word;
+    /* Protege pantallas mini contra URLs largas */
 }
 
 .inf_remarcado {
-    display: block; 
+    display: block;
     font-weight: 700;
     color: #1e262e;
     text-transform: uppercase;
@@ -562,23 +673,36 @@ header {
     border: 1px solid #28323d;
     border-radius: 8px;
     color: #ffffff;
-    font-size: 1rem; /* Al menos 16px previene el zoom forzado en navegadores móviles */
+    font-size: 1rem;
+    /* Al menos 16px previene el zoom forzado en navegadores móviles */
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    -webkit-appearance: none; /* Mitiga discrepancias de renderizado en iOS */
+    -webkit-appearance: none;
+    /* Mitiga discrepancias de renderizado en iOS */
 }
 
-.campo textarea { resize: vertical; }
-.campo input::placeholder, .campo textarea::placeholder { color: #4a5568; }
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #4a5568;
+}
 
 /* Focus State UX (Efecto anillo cian neón) */
-.campo input:focus, .campo select:focus, .campo textarea:focus {
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
     outline: none;
     border-color: #00d4ff;
     box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15);
 }
 
-.campo select option { background-color: #1e262e; color: #ffffff; }
+.campo select option {
+    background-color: #1e262e;
+    color: #ffffff;
+}
 
 /* Botón de Envío Interactivo */
 .btn-enviar {
@@ -606,10 +730,10 @@ header {
 /* --- 3.2 Estilos del Footer Base Móvil --- */
 .footer {
     background-color: #1e262e;
-    color: #b0c4de;            
+    color: #b0c4de;
     padding: 60px 20px 20px 20px;
     font-family: system-ui, -apple-system, sans-serif;
-    border-top: 2px solid #28323d; 
+    border-top: 2px solid #28323d;
     position: relative;
     overflow: hidden;
 }
@@ -628,7 +752,7 @@ header {
 .footer_grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px; 
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -642,10 +766,19 @@ header {
     margin-bottom: 12px;
 }
 
-.footer_brand .footer_logo span { color: #00d4ff; }
-.footer_brand .footer_tagline { font-size: 0.95rem; line-height: 1.6; color: #a0aec0; max-width: 300px; }
+.footer_brand .footer_logo span {
+    color: #00d4ff;
+}
 
-.footer_nav h4, .footer_schedule h4 {
+.footer_brand .footer_tagline {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #a0aec0;
+    max-width: 300px;
+}
+
+.footer_nav h4,
+.footer_schedule h4 {
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 700;
@@ -671,9 +804,23 @@ header {
     display: inline-block;
 }
 
-.footer_links a:hover { color: #00d4ff; padding-left: 6px; }
-.footer_schedule p { font-size: 0.95rem; line-height: 1.6; margin: 0 0 8px 0; }
-.footer_urgencias { color: #ffffff; font-weight: 600; margin-top: 14px !important; font-size: 0.9rem !important; }
+.footer_links a:hover {
+    color: #00d4ff;
+    padding-left: 6px;
+}
+
+.footer_schedule p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 8px 0;
+}
+
+.footer_urgencias {
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 14px !important;
+    font-size: 0.9rem !important;
+}
 
 .footer_bottom {
     border-top: 1px solid #28323d;
@@ -686,26 +833,76 @@ header {
     gap: 12px;
 }
 
-.footer_bottom p { font-size: 0.85rem; color: #718096; margin: 0; line-height: 1.5; }
-.footer_developer { font-style: italic; color: #a0aec0 !important; }
+.footer_bottom p {
+    font-size: 0.85rem;
+    color: #718096;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer_developer {
+    font-style: italic;
+    color: #a0aec0 !important;
+}
 
 
 /* --- 3.3 REGLAS DE CRECIMIENTO PROGRESIVO (PANTALLAS GRANDES DESKTOP >= 768px) --- */
 @media (min-width: 768px) {
-    
+
     /* Escalabilidad del Contenedor Contacto */
-    .contacto { padding: 80px 24px; }
-    .contacto > h2 { font-size: 2.4rem; margin-bottom: 48px; }
+    .contacto {
+        padding: 80px 24px;
+    }
+
+    .contacto>h2 {
+        font-size: 2.4rem;
+        margin-bottom: 48px;
+    }
 
     /* Transición horizontal asimétrica: 40% datos de contacto y 60% el formulario */
-    .contacto_grid { grid-template-columns: 4fr 6fr; gap: 40px; }
-    .contacto_info, .contacto_formulario { padding: 40px; border-radius: 20px; }
-    .contacto_info h3, .contacto_formulario h3 { font-size: 1.4rem; }
-    .link-contacto:hover { color: #00d4ff; text-decoration: underline; }
-    .btn-enviar:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); filter: brightness(1.05); }
+    .contacto_grid {
+        grid-template-columns: 4fr 6fr;
+        gap: 40px;
+    }
+
+    .contacto_info,
+    .contacto_formulario {
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .contacto_info h3,
+    .contacto_formulario h3 {
+        font-size: 1.4rem;
+    }
+
+    .link-contacto:hover {
+        color: #00d4ff;
+        text-decoration: underline;
+    }
+
+    .btn-enviar:hover:not(:disabled) {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        filter: brightness(1.05);
+    }
 
     /* Escalabilidad del Footer */
-    .footer { padding: 80px 40px 30px 40px; }
-    .footer_grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } /* Despliega los 3 bloques en paralelo */
-    .footer_bottom { flex-direction: row; justify-content: space-between; text-align: left; } /* Extiende la barra final */
+    .footer {
+        padding: 80px 40px 30px 40px;
+    }
+
+    .footer_grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* Despliega los 3 bloques en paralelo */
+    .footer_bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    /* Extiende la barra final */
 }

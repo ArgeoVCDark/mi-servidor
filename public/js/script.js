@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
  * Controla la apertura y cierre del menú de navegación en dispositivos móviles.
  */
 function inicializarMenuToggle() {
-    const botonToggle = document.querySelector('.boton-toggle');
-    const menuNavegacion = document.querySelector('.menu-navegacion'); // Ajusta la clase a tu HTML
+    const botonToggle = document.querySelector('.btn_toggle');
+    const menuNavegacion = document.querySelector('.navbar'); // Ajusta la clase a tu HTML
 
     // Guardián: si no existe el botón en este HTML, salimos pacíficamente
     if (!botonToggle || !menuNavegacion) return;
@@ -75,70 +75,72 @@ function inicializarAnimacionSecciones() {
  */
 function inicializarCarruselTestimonios() {
     const track = document.querySelector('.testimonio_track');
-    const carousel = document.querySelector('.carousel');
-
-    if (!track || !carousel) return;
+    // Asumimos que el contenedor animado es el track para unificar la lógica
+    if (!track) return; 
 
     let isDragging = false;
     let startX;
     let currentTransform = 0;
 
     function getTranslateX() {
-        const style = window.getComputedStyle(carousel);
+        const style = window.getComputedStyle(track);
         const matrix = new WebKitCSSMatrix(style.transform);
-        return matrix.m41;
+        return matrix.m41; // Obtiene el valor actual de X en la animación
     }
 
-    // Eventos Mouse (Escritorio)
+    // --- EVENTOS MOUSE (ESCRITORIO) ---
     track.addEventListener('mousedown', (e) => {
         isDragging = true;
         track.style.cursor = 'grabbing';
         currentTransform = getTranslateX();
-        carousel.style.animation = 'none';
-        carousel.style.transform = `translateX(${currentTransform}px)`;
+        track.style.animationPlayState = 'paused'; // Pausa la animación CSS de forma limpia
+        track.style.transform = `translateX(${currentTransform}px)`;
         startX = e.pageX;
     });
 
+    // Escuchar el movimiento en el contenedor o window de forma segura
     window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
         e.preventDefault();
         const x = e.pageX;
-        const walk = (x - startX) * 1.5;
+        const walk = (x - startX) * 1.3; // Factor de resistencia suave
         let targetX = currentTransform + walk;
-        if (targetX > 0) targetX = 0;
-        carousel.style.transform = `translateX(${targetX}px)`;
+        
+        if (targetX > 0) targetX = 0; // Evita que se arrastre de más a la izquierda
+        track.style.transform = `translateX(${targetX}px)`;
     });
 
     window.addEventListener('mouseup', () => {
         if (!isDragging) return;
         isDragging = false;
         track.style.cursor = 'grab';
-        carousel.style.animation = 'carruselInfinito 25s linear infinite';
-        carousel.style.transform = '';
+        track.style.animationPlayState = 'running'; // Reanuda la animación infinita
+        track.style.transform = '';
     });
 
-    // Eventos Táctiles (Móviles)
+    // --- EVENTOS TÁCTILES (MÓVILES) ---
     track.addEventListener('touchstart', (e) => {
         isDragging = true;
         currentTransform = getTranslateX();
-        carousel.style.animation = 'none';
-        carousel.style.transform = `translateX(${currentTransform}px)`;
-        startX = e.touches.pageX;
+        track.style.animationPlayState = 'paused';
+        track.style.transform = `translateX(${currentTransform}px)`;
+        startX = e.touches[0].pageX; // CORREGIDO: Se añade [0] para obtener el primer toque
     });
 
-    window.addEventListener('touchmove', (e) => {
+    track.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
-        const x = e.touches.pageX;
-        const walk = (x - startX) * 1.5;
+        const x = e.touches[0].pageX; // CORREGIDO: Se añade [0]
+        const walk = (x - startX) * 1.3;
         let targetX = currentTransform + walk;
+        
         if (targetX > 0) targetX = 0;
-        carousel.style.transform = `translateX(${targetX}px)`;
+        track.style.transform = `translateX(${targetX}px)`;
     });
 
-    window.addEventListener('touchend', () => {
+    track.addEventListener('touchend', () => {
         if (!isDragging) return;
         isDragging = false;
-        carousel.style.animation = 'carruselInfinito 25s linear infinite';
-        carousel.style.transform = '';
+        track.style.animationPlayState = 'running';
+        track.style.transform = '';
     });
 }
