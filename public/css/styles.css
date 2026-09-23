@@ -1,6 +1,6 @@
 :root {
     --background: hwb(240 78% 19%);
-    --color-primery: #0084ff;
+    --color-primary: #0084ff;
     --color-secundary: #4b370dec;
     --color-primary-lihgt: #00d4ff;
 }
@@ -14,7 +14,7 @@
 html {
     scroll-behavior: smooth;
     font-family: sans-serif;
-    background-color: --background;
+    background-color: var(--background);
 }
 
 a {
@@ -31,7 +31,7 @@ header {
     justify-content: space-between;
     text-align: center;
     padding: 1.5rem 3rem 1.5rem 3rem;
-    background-color: var(--color-primery);
+    background-color: var(--color-primary);
     position: relative;
 }
 
@@ -160,11 +160,7 @@ header {
     border-bottom: 3px solid orange;
 }
 
-.footer {
-    background-color: var(--color-secundary);
-    height: 150px;
-    color: var(--background);
-}
+
 
 /* --- ESTILOS COMPLEMENTARIOS PARA EL HERO --- */
 .hero {
@@ -334,14 +330,14 @@ header {
 
 /* Colores alternados para contraste de tarjetas */
 .tarjeta:nth-child(odd) {
-    --color-actual: var(--color-primery);
+    --color-actual: var(--color-primary);
     --color-anterior: var(--color-primary-lihgt);
     background-color: var(--color-actual);
 }
 
 .tarjeta:nth-child(even) {
     --color-actual: var(--color-primary-lihgt);
-    --color-anterior: var(--color-primery);
+    --color-anterior: var(--color-primary);
     background-color: var(--color-actual);
 }
 
@@ -677,7 +673,7 @@ header {
     /* Al menos 16px previene el zoom forzado en navegadores móviles */
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     /* Mitiga discrepancias de renderizado en iOS */
 }
 
