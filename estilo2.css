@@ -27,6 +27,10 @@ li {
     list-style: none;
 }
 
+/* =========================================
+   2. ESTILOS MÓVIL (Por defecto: 320px - 480px)
+  ========================================== */
+
 .header {
     padding: var(--padding);
     position: relative;
@@ -42,7 +46,8 @@ li {
     font-size: 1.5rem;
     font-weight: 900;
 }
-.btn_toggle{
+
+.btn_toggle {
     padding: 10px;
     border: none;
     display: flex;
@@ -52,44 +57,54 @@ li {
     outline: none;
     background: transparent;
 }
-.linea{
+
+.linea {
     background-color: black;
     display: block;
-    width:24px;
+    width: 24px;
     height: 3px;
     border-radius: 3px;
 }
-.btn_toggle.active .linea:first-child{
+
+.btn_toggle.active .linea:first-child {
     transform: translateY(9px) rotate(45deg);
 }
-.btn_toggle.active .linea:nth-child(2){
-opacity: 0;
+
+.btn_toggle.active .linea:nth-child(2) {
+    opacity: 0;
 }
-.btn_toggle.active .linea:last-child{
-        transform: translateY(-9px) rotate(-45deg);
+
+.btn_toggle.active .linea:last-child {
+    transform: translateY(-9px) rotate(-45deg);
 }
-.navbar{
+
+.navbar {
     opacity: 0;
     pointer-events: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
+    background-color: var(--color--primary);
 }
-.navbar.active{
+
+.navbar.active {
     opacity: 1;
     pointer-events: auto;
 }
-.navbar_list{
+
+.navbar_list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.navbar_item{
+
+.navbar_item {
     width: 90%;
 }
-.navbar_link{
+
+.navbar_link {
     display: block;
     text-align: center;
     padding: .5rem;
@@ -98,7 +113,8 @@ opacity: 0;
     font-size: 1.3rem;
     font-weight: 700;
 }
-.navbar_link:hover{
+
+.navbar_link:hover {
     background-color: #a3d0d0;
     color: black;
     box-shadow: 0 1px 0 white;
@@ -109,10 +125,82 @@ opacity: 0;
 *****************************************************/
 
 .section {
-    opacity: 0;
-    pointer-events: none;
     padding: 0 var(--padding);
+}
 
+.inicio {
+    max-height: 80%;
+}
+
+.section .title {
+    text-align: center;
+}
+
+.section .description {
+    text-align: justify;
+
+}
+
+.btn_container {
+    margin: 1.2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    border-radius: 10px;
+    padding: .8rem;
+    background-color: var(--color--secundary);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    /* Suaviza todas las interacciones */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    color: black;
+    box-shadow: 0 5px 0 var(--color--primary);
+        transform: scale(1.03);
+
+}
+.btn_principal {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn_principal::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+
+    animation: brillo 3s infinite;
+}
+
+@keyframes brillo {
+    0% {
+        left: -30%;
+    }
+
+    30% {
+        left: 100%;
+    }
+
+    100% {
+        left: 130%;
+    }
 }
 
 .card {
@@ -127,6 +215,7 @@ opacity: 0;
     font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
+    margin: auto;
 }
 
 .card::before,
@@ -167,3 +256,18 @@ opacity: 0;
 .card:hover:after {
     content: "HELLO";
 }
+
+/* --- PEQUEÑO (Móviles horizontales: 481px a 767px) --- */
+@media (min-width: 481px) {}
+
+/* --- MEDIANO (Tablets: 768px a 991px) --- */
+@media (min-width: 768px) {}
+
+/* --- GRANDE (Laptops: 992px a 1199px) --- */
+@media (min-width: 992px) {}
+
+/* --- EXTRA GRANDE (Desktop estándar: 1200px a 1399px) --- */
+@media (min-width: 1200px) {}
+
+/* --- ULTRA WIDE (Monitores grandes: ≥ 1400px) --- */
+@media(min-width:1400px) {}

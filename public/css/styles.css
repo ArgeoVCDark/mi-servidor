@@ -242,7 +242,7 @@ header {
 }
 
 /* Efecto de destello brillante automático para captar la mirada */
-.btn-principal::after {
+.btn-principal::before {
     content: "";
     position: absolute;
     top: 0;
