@@ -1,14 +1,15 @@
-:root {
-    --bg: #a8acac;
-    --color--primary: mediumturquoise;
-    --color--secundary: rgb(72, 163, 209);
-    --padding: 1.25rem;
-}
-
+/*////////////////////////////////////////////
+estilos generales
+////////////////////////////////////////////*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --bag: rgb(202, 204, 204);
+    --paddin: 1.25rem;
 }
 
 html {
@@ -16,53 +17,63 @@ html {
 }
 
 body {
-    background-color: var(--bg);
+    background-color: var(--bag);
 }
 
 a {
     text-decoration: none;
 }
 
-li {
+ul {
     list-style: none;
 }
 
-/* =========================================
-   2. ESTILOS MÓVIL (Por defecto: 320px - 480px)
-  ========================================== */
+/*////////////////////////////////////////////
+Estilos  Movil smaall>=320 - 480
+////////////////////////////////////////////*/
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
 
 .header {
-    padding: var(--padding);
-    position: relative;
+    width: 100%;
+    position: fixed;
+    background-color: whitesmoke;
+    z-index: 100;
+}
+
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1.5rem;
 }
 
 .header_logo {
-    text-transform: uppercase;
-    line-height: 1.5;
-    color: #000000;
-    font-size: 1.5rem;
     font-weight: 900;
+    color: black;
 }
 
 .btn_toggle {
-    padding: 10px;
-    border: none;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 6px;
-    cursor: pointer;
-    outline: none;
+    border: none;
     background: transparent;
+    cursor: pointer;
+    margin: 1rem;
+
 }
 
 .linea {
-    background-color: black;
-    display: block;
     width: 24px;
     height: 3px;
+    background-color: black;
     border-radius: 3px;
 }
 
@@ -84,8 +95,9 @@ li {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    background-color: var(--color--primary);
+    width: 100%;
+    background-color: whitesmoke;
+    transition: 0.5s ease-out;
 }
 
 .navbar.active {
@@ -98,100 +110,109 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 6px;
+    padding: var(--paddin);
 }
 
 .navbar_item {
-    width: 90%;
+    width: 100%;
 }
 
 .navbar_link {
     display: block;
     text-align: center;
-    padding: .5rem;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.3rem;
+    padding: 6px 0;
     font-weight: 700;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
 }
 
 .navbar_link:hover {
-    background-color: #a3d0d0;
-    color: black;
+    color: white;
+    background-color: blue;
+    transform: scale(1.03);
     box-shadow: 0 1px 0 white;
 }
 
-/*****************************************************
-                    tarjetas
-*****************************************************/
-
-.section {
-    padding: 0 var(--padding);
-}
-
-.inicio {
-    max-height: 80%;
-}
-
-.section .title {
-    text-align: center;
-}
-
-.section .description {
-    text-align: justify;
+.hero {
+    background: linear-gradient(135deg, rgb(0, 0, 206) 0%, rgb(0, 0, 133) 100%);
 
 }
 
-.btn_container {
-    margin: 1.2rem auto;
+.hero__container {
+
+    min-height: 80vh;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.title {
+    margin-bottom: .5rem;
+    font-size: 3rem;
+}
+
+.descripciton {
+    font-size: 1.5rem;
+}
+
+.heroontainer__body {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
 }
 
 .btn {
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+    padding: 1.5rem 3rem;
     border-radius: 10px;
-    padding: .8rem;
-    background-color: var(--color--secundary);
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 700;
-    /* Suaviza todas las interacciones */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    text-align: center;
 }
 
 .btn:hover {
-    color: black;
-    box-shadow: 0 5px 0 var(--color--primary);
-        transform: scale(1.03);
-
+    background-color: blue;
+    color: white;
 }
-.btn_principal {
+
+.btn__primary {
+    background-color: rgb(0, 183, 255);
     position: relative;
     overflow: hidden;
 }
 
-.btn_principal::before {
-
+.btn__primary::before {
     content: "";
     position: absolute;
     top: 0;
     left: -50%;
-    width: 20%;
+    width: 30%;
     height: 100%;
-    background: linear-gradient(to right,
+    background: linear-gradient(90deg,
             rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0.6) 50%,
             rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
+    /* 7. Cambié gray/black por un degradado blanco translúcido más realista */
 
-    animation: brillo 3s infinite;
+    transform: skewX(-30deg);
+    animation: destello 3s linear infinite normal;
 }
 
-@keyframes brillo {
+@keyframes destello {
+
     0% {
-        left: -30%;
+        left: -50%;
     }
 
     30% {
@@ -203,71 +224,248 @@ li {
     }
 }
 
+.servicios {
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+.servicios__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 5rem;    /* Espacio interno arriba de la sección */
+    padding-bottom: 5rem; /* Espacio interno abajo de la sección */
+}
+
+.container__title {
+    text-align: center;
+}
+
+.section__title {
+    margin-bottom: 1rem;  /* Estilo de margen de una sola dirección */
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #111;
+}
+
+.section__description {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* El contenedor que guarda tus <article> */
+.container__body {
+    width: 100%;
+    display: grid;       /* Grid activa las columnas de manera automatizada */
+    grid-template-columns: 1fr; /* 1 columna en celulares */
+    gap: 2.5rem;         /* Separación limpia entre tarjetas */
+}
+
+/* Tarjeta (<article>) */
 .card {
-    position: relative;
-    width: 220px;
-    height: 320px;
-    background: mediumturquoise;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;    /* Protege las esquinas de la imagen con el border-radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil profesional */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    margin: auto;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
 }
 
-.card::before,
-.card::after {
-    position: absolute;
-    content: "";
-    width: 20%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    background-color: lightblue;
-    transition: all 0.5s;
+/* 🎯 Efecto Hover: Eleva la tarjeta suavemente cuando pasas el cursor */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.card::before {
-    top: 0;
-    right: 0;
-    border-radius: 0 15px 0 100%;
+/* 🎯 El div que envuelve tu imagen */
+.card__img {
+    width: 100%;
+    height: 220px;       /* 🛑 Altura fija para equilibrar todas tus tarjetas */
+    overflow: hidden;
 }
 
-.card::after {
-    bottom: 0;
-    left: 0;
-    border-radius: 0 100% 0 15px;
-}
-
-.card:hover::before,
-.card:hover:after {
+/* Tu imagen adaptada al contenedor moderno */
+.card__img img {
     width: 100%;
     height: 100%;
+    object-fit: cover;   /* Adapta la imagen al cuadro sin estirarla feo */
+    display: block;
+}
+
+.card__body {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tu span con el efecto destello que solucionamos */
+.tag {
+    display: inline-block;
+    padding: .2rem .6rem;
+    background-color: rgb(0, 183, 255);
     border-radius: 15px;
-    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem; /* Empuja al título hacia abajo */
 }
 
-.card:hover:after {
-    content: "HELLO";
+.tag::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-30deg);
+    animation: destello 3s linear infinite normal;
 }
 
-/* --- PEQUEÑO (Móviles horizontales: 481px a 767px) --- */
-@media (min-width: 481px) {}
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.8rem; /* Empuja a la descripción hacia abajo */
+}
 
-/* --- MEDIANO (Tablets: 768px a 991px) --- */
-@media (min-width: 768px) {}
+.card__descriptin {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5; /* Espaciado entre líneas para mejor lectura */
+}
 
-/* --- GRANDE (Laptops: 992px a 1199px) --- */
-@media (min-width: 992px) {}
 
-/* --- EXTRA GRANDE (Desktop estándar: 1200px a 1399px) --- */
-@media (min-width: 1200px) {}
 
-/* --- ULTRA WIDE (Monitores grandes: ≥ 1400px) --- */
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////
+Estilos  Movil >=481 - 767
+////////////////////////////////////////////*/
+@media(min-width:481px) {
+    .heroontainer__body {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*////////////////////////////////////////////
+Estilos tablet >=768 -991
+////////////////////////////////////////////*/
+@media(min-width: 768px) {
+
+    .btn_toggle {
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    .navbar {
+        opacity: 1;
+        pointer-events: auto;
+        position: static;
+        width: max-content;
+        display: flex;
+        transition: 0.5s ease-out;
+    }
+
+    .navbar_list {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    .navbar_item {
+        width: auto;
+    }
+
+    .navbar_link {
+        display: inline;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    .container__body {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+
+}
+
+/*////////////////////////////////////////////
+Estilos laptop >=992 - 1199
+////////////////////////////////////////////*/
+@media(min-width:992px) {
+    .container__body {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2rem;
+    }
+}
+
+
+/*////////////////////////////////////////////
+Estilos desktop >=1200- 1399
+////////////////////////////////////////////*/
+@media(min-width:1200px) {
+
+    .heroontainer__body {
+        gap: 10rem;
+    }
+}
+
+/*////////////////////////////////////////////
+Estilos ultra wide>=1400
+////////////////////////////////////////////*/
 @media(min-width:1400px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////
+Estilos  Movil smaall>=320 - 480
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos  Movil >=481 - 767
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos tablet >=768 -991
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos laptop >=992 - 1199
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos desktop >=1200- 1399
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos ultra wide>=1400
+////////////////////////////////////////////*/

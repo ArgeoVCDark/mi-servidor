@@ -4,50 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba 2</title>
+    <title>Prueba 2 - Responsiva</title>
+    <!-- Vinculación con el archivo de estilos CSS -->
     <link rel="stylesheet" href="estilo2.css">
 </head>
 
 <body>
+    <!-- ENCABEZADO PRINCIPAL: Contiene el logo y la navegación -->
     <header class="header">
-        <a href="#" class="header_logo">Logo</a>
+        <div class="container header__container">
+        <!-- Logo del sitio web -->
+        <a href="#" class="header_logo">RH-SYSTEM</a>
+
+        <!-- Botón de hamburguesa para desplegar el menú en móviles -->
         <button class="btn_toggle">
             <span class="linea"></span>
             <span class="linea"></span>
             <span class="linea"></span>
         </button>
+
+        <!-- Barra de navegación (Menú desplegable en móvil) -->
         <nav class="navbar">
-            <ul class="navbar_list">
-                <li class="navbar_item"><a href="#inicio" class="navbar_link">Inicio</a></li>
-                <li class="navbar_item"><a href="#servicios" class="navbar_link">Servicios</a></li>
-                <li class="navbar_item"><a href="#experiencia" class="navbar_link">Experiencia</a></li>
-                <li class="navbar_item"><a href="#contacto" class="navbar_link">Contactar</a></li>
-            </ul>
-        </nav>
+                <ul class="navbar_list">
+                    <li class="navbar_item"><a href="#inicio" class="navbar_link">Inicio</a></li>
+                    <li class="navbar_item"><a href="#servicios" class="navbar_link">Servicios</a></li>
+                    <li class="navbar_item"><a href="#experiencia" class="navbar_link">Experiencia</a></li>
+                    <li class="navbar_item"><a href="#contacto" class="navbar_link">Contactar</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main class="main">
-        <section class="section inicio">
-            <h1 class="title">Este es el titulo principal solo debe de haber 1 en todo el proyecto</h1>
-            <p class="description">Este es un parrafo y puede haber mas de 1 en todo el poyecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut earum neque atque! Veritatis, dolores temporibus!</p>
-            <div class="btn_container">
-                <a href="#" class="btn">Experriencia</a>
-                <a href="#contacto" class="btn btn_principal">Contactar</a>
-                <article class="card">HOVER</article>
-            </div>
-            
+    <body>
+        
+        <main>
+            <section class="hero">
+                <div class="container hero__container">
+                    <h1 class="title">Titulo principal</h1>
+                    <p class="descripciton">Este es un parrafo de descripcon de la pagina, complementario al titulo</p>
+                    <div class="heroontainer__body">
+                        <a href="servicios" class="btn">Servicos</a>
+                        <a href="contactar" class="btn btn__primary">Contactar</a>
+                    </div>
+                </div>
+            </section>
+            <section class="servicios">
+                <div class="container servicios__container">
+                    <div class="container__title">
+                        <h2 class="section__title">Seccion de servicios</h2>
+                        <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
+                    </div>
+                    <div class="container__body">
+                        <article class="card">
+                            <div class="card__img">
+                                <img src="img/Camino.jpg" alt="Imagen 1">
+                            </div>
+                            <div class="card__body">
+                                <span class="tag">Oferta llamativa</span>
+                                <h3 class="card__title">Titulo de la card</h3>
+                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card__img">
+                                <img src="img/Camino.jpg" alt="Imagen 1">
+                            </div>
+                            <div class="card__body">
+                                <span class="tag">Oferta llamativa</span>
+                                <h3 class="card__title">Titulo de la card</h3>
+                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card__img">
+                                <img src="img/Camino.jpg" alt="Imagen 1">
+                            </div>
+                            <div class="card__body">
+                                <span class="tag">Oferta llamativa</span>
+                                <h3 class="card__title">Titulo de la card</h3>
+                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="Experiencas">
+                <div class="container experiencias__container">
+                    <div class="container__title">
+                        <h2 class="section__title">Seccion de Experiencias</h2>
+                        <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
+                    </div>
+                    <div class="container__body">
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 
-        </section>
-        <section class="section servicio">
-            <h2 class="section_title">Este es el titulo de la seccion y es un h2</h2>
-            <p>Estes una descripcion de la seccion y es un parrafo.</p>
-            <!-- From Uiverse.io by eslam-hany -->
-            <div class="section_container">
 
-            </div>
-        </section>
-        <section class="section experiencia"></section>
-        <section class="section contacto"></section>
-    </main>
+
+    <!-- Vinculación con el archivo JavaScript para la lógica del menú -->
     <script src="scriptprueb2.js"></script>
 </body>
 
