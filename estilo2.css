@@ -16,9 +16,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: var(--bag);
-}
+body {}
 
 a {
     text-decoration: none;
@@ -26,6 +24,46 @@ a {
 
 ul {
     list-style: none;
+}
+
+
+
+
+
+/* Estilos del botón flotante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde abajo */
+    right: 20px;
+    /* Distancia desde la derecha */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    /* Verde oficial de WhatsApp */
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    /* Asegura que quede por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    /* Se agranda un poco */
+    background-color: #128c7e;
+    /* Verde más oscuro */
+}
+
+/* Estilos del icono SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
 }
 
 /*////////////////////////////////////////////
@@ -134,13 +172,15 @@ Estilos  Movil smaall>=320 - 480
     box-shadow: 0 1px 0 white;
 }
 
+/*////////////////////////////////////////////
+///////estilos generales-comunes
+////////////////////////////////////////////*/
 .hero {
     background: linear-gradient(135deg, rgb(0, 0, 206) 0%, rgb(0, 0, 133) 100%);
 
 }
 
 .hero__container {
-
     min-height: 80vh;
     color: white;
     display: flex;
@@ -224,140 +264,152 @@ Estilos  Movil smaall>=320 - 480
     }
 }
 
-.servicios {
-    background-color: whitesmoke;
-    width: 100%;
-}
-
-.servicios__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    padding-top: 5rem;    /* Espacio interno arriba de la sección */
-    padding-bottom: 5rem; /* Espacio interno abajo de la sección */
-}
-
+/*////////////////////////////////////////////
+///////estilos generales-comunes
+////////////////////////////////////////////*/
 .container__title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .section__title {
-    margin-bottom: 1rem;  /* Estilo de margen de una sola dirección */
-    font-weight: 800;
     font-size: 2.5rem;
-    color: #111;
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
 .section__description {
-    font-weight: 700;
     font-size: 1.2rem;
-    color: #555;
+    font-weight: 700;
 }
 
-/* El contenedor que guarda tus <article> */
 .container__body {
-    width: 100%;
-    display: grid;       /* Grid activa las columnas de manera automatizada */
-    grid-template-columns: 1fr; /* 1 columna en celulares */
-    gap: 2.5rem;         /* Separación limpia entre tarjetas */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-/* Tarjeta (<article>) */
 .card {
-    text-align: center;
+    max-width: 368px;
+    height: 500px;
     background-color: white;
     border-radius: 12px;
-    overflow: hidden;    /* Protege las esquinas de la imagen con el border-radius */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra sutil profesional */
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
+    overflow: hidden;
+    box-shadow: -4px 4px 10px  rgba(255, 255, 255, .1);
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: -4px 6px 10px rgb(255,255, 255, .4);
 }
 
-/* 🎯 Efecto Hover: Eleva la tarjeta suavemente cuando pasas el cursor */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* 🎯 El div que envuelve tu imagen */
 .card__img {
     width: 100%;
-    height: 220px;       /* 🛑 Altura fija para equilibrar todas tus tarjetas */
+    height: 200px;
     overflow: hidden;
 }
 
-/* Tu imagen adaptada al contenedor moderno */
-.card__img img {
+img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Adapta la imagen al cuadro sin estirarla feo */
-    display: block;
+    object-fit: cover;
 }
 
 .card__body {
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1rem;
+    text-align: center;
 }
 
-/* Tu span con el efecto destello que solucionamos */
-.tag {
-    display: inline-block;
-    padding: .2rem .6rem;
+.card__tag {
     background-color: rgb(0, 183, 255);
-    border-radius: 15px;
+    padding: 4px 6px;
+    border-radius: 10px;
+
     position: relative;
-    overflow: hidden;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem; /* Empuja al título hacia abajo */
 }
 
-.tag::before {
-    content: "";
+.card__tag::before {
     position: absolute;
+    content: "";
     top: 0;
-    left: -50%;
+    left: 0;
     width: 30%;
     height: 100%;
-    background: linear-gradient(90deg,
-            rgba(255, 255, 255, 0) 0%,
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.6) 50%,
             rgba(255, 255, 255, 0) 100%);
     transform: skewX(-30deg);
-    animation: destello 3s linear infinite normal;
+    animation: destello 3s infinite linear;
 }
 
 .card__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 0.8rem; /* Empuja a la descripción hacia abajo */
+    margin: 1rem 0 1.5rem;
 }
 
-.card__descriptin {
+.card__description {
     font-size: 1rem;
-    color: #666;
-    line-height: 1.5; /* Espaciado entre líneas para mejor lectura */
+    font-weight: 600;
+    color: gray;
 }
 
+/*////////////////////////////////////////////
+///////Section servicio
+////////////////////////////////////////////*/
+.servicios__container {
+    background-color: chocolate;
 
+}
 
+/*////////////////////////////////////////////
+///////Section experiencias
+////////////////////////////////////////////*/
+.experiencias__container {
+    background-color: aqua;
+}
+.card-experiencias{
+    perspective: 1000px;
+    background-color: transparent;
+    box-shadow: none;
+}
+.eje{
+    width: 100%;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    position: relative;
+}
+/* Cancela el movimiento y la sombra en el hover de la tarjeta de experiencias */
+.card-experiencias:hover {
+    transform: none; /* Evita que la tarjeta salte hacia arriba */
+    box-shadow: none; /* Elimina la sombra por defecto en el contenedor exterior */
+}
 
-
-
-
-
-
-
-
-
-
+.card-experiencias:hover .eje{
+    transform: rotateY(180deg);
+}
+.cara{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.frontal{
+    background-color: white;
+}
+.trasera{
+    background-color: darkgreen;
+    transform: rotateY(180deg);
+}
+/*////////////////////////////////////////////
+///////Section pruebas
+////////////////////////////////////////////*/
+.pruebas__container {
+    background-color: cornflowerblue;
+}
 
 /*////////////////////////////////////////////
 Estilos  Movil >=481 - 767
@@ -406,8 +458,9 @@ Estilos tablet >=768 -991
         font-size: 1.2rem;
         font-weight: 700;
     }
+
     .container__body {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
@@ -418,7 +471,7 @@ Estilos laptop >=992 - 1199
 ////////////////////////////////////////////*/
 @media(min-width:992px) {
     .container__body {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
 }

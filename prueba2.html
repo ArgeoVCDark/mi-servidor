@@ -10,21 +10,30 @@
 </head>
 
 <body>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+        title="Chatea con nosotros por WhatsApp">
+        <!-- Icono de WhatsApp (Usando SVG para no depender de librerías externas) -->
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path
+                d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.792l-2.025 7.392 7.561-1.983c2.235 1.22 4.805 1.917 7.548 1.917 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.932 22.716c-.367 1.033-1.812 1.884-2.512 2.008-.638.113-1.472.2-4.292-.962-3.606-1.488-5.932-5.157-6.113-5.397-.18-.24-1.463-1.944-1.463-3.708 0-1.764.922-2.632 1.252-2.988.33-.356.721-.446.962-.446.24 0 .48.003.692.012.222.009.52-.084.812.619.298.719 1.018 2.484 1.107 2.665.089.18.148.39.029.628-.119.238-.179.387-.358.596-.178.21-.376.467-.538.628-.18.18-.368.377-.16.733.209.356.929 1.533 1.992 2.48 1.367 1.218 2.518 1.594 2.877 1.774.36.18.57.151.78-.093.21-.244.897-1.047 1.137-1.405.24-.358.48-.298.81-.179.33.119 2.096 1.042 2.455 1.221.359.18.598.267.687.417.089.151.089.872-.278 1.905z"
+                fill="#FFF" />
+        </svg>
+    </a>
     <!-- ENCABEZADO PRINCIPAL: Contiene el logo y la navegación -->
     <header class="header">
         <div class="container header__container">
-        <!-- Logo del sitio web -->
-        <a href="#" class="header_logo">RH-SYSTEM</a>
+            <!-- Logo del sitio web -->
+            <a href="#" class="header_logo">RH-SYSTEM</a>
 
-        <!-- Botón de hamburguesa para desplegar el menú en móviles -->
-        <button class="btn_toggle">
-            <span class="linea"></span>
-            <span class="linea"></span>
-            <span class="linea"></span>
-        </button>
-
-        <!-- Barra de navegación (Menú desplegable en móvil) -->
-        <nav class="navbar">
+            <!-- Botón de hamburguesa para desplegar el menú en móviles -->
+            <button class="btn_toggle">
+                <span class="linea"></span>
+                <span class="linea"></span>
+                <span class="linea"></span>
+            </button>
+            <!-- Barra de navegación (Menú desplegable en móvil) -->
+            <nav class="navbar">
                 <ul class="navbar_list">
                     <li class="navbar_item"><a href="#inicio" class="navbar_link">Inicio</a></li>
                     <li class="navbar_item"><a href="#servicios" class="navbar_link">Servicios</a></li>
@@ -34,8 +43,8 @@
             </nav>
         </div>
     </header>
+
     <body>
-        
         <main>
             <section class="hero">
                 <div class="container hero__container">
@@ -54,55 +63,156 @@
                         <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
                     </div>
                     <div class="container__body">
-                        <article class="card">
+                        <article class="card card-servicios">
                             <div class="card__img">
                                 <img src="img/Camino.jpg" alt="Imagen 1">
                             </div>
                             <div class="card__body">
-                                <span class="tag">Oferta llamativa</span>
+                                <span class="card__tag">Oferta llamativa</span>
                                 <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
+                                    o hacia que esta enfocado</p>
                             </div>
                         </article>
-                        <article class="card">
+                        <article class="card card-servicios">
                             <div class="card__img">
                                 <img src="img/Camino.jpg" alt="Imagen 1">
                             </div>
                             <div class="card__body">
-                                <span class="tag">Oferta llamativa</span>
+                                <span class="card__tag">Oferta llamativa</span>
                                 <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
+                                    o hacia que esta enfocado</p>
                             </div>
                         </article>
-                        <article class="card">
+                        <article class="card card-servicios">
                             <div class="card__img">
                                 <img src="img/Camino.jpg" alt="Imagen 1">
                             </div>
                             <div class="card__body">
-                                <span class="tag">Oferta llamativa</span>
+                                <span class="card__tag">Oferta llamativa</span>
                                 <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__descriptin">Descripcion de la tarjeta, de que trata, cual es su funcion o hacia que esta enfocado</p>
+                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
+                                    o hacia que esta enfocado</p>
+                            </div>
+                        </article>
+                        <article class="card card-servicios">
+                            <div class="card__img">
+                                <img src="img/Camino.jpg" alt="Imagen 1">
+                            </div>
+                            <div class="card__body">
+                                <span class="card__tag">Oferta llamativa</span>
+                                <h3 class="card__title">Titulo de la card</h3>
+                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
+                                    o hacia que esta enfocado</p>
                             </div>
                         </article>
                     </div>
                 </div>
             </section>
-            <section class="Experiencas">
+            <section class="Experiencias">
                 <div class="container experiencias__container">
                     <div class="container__title">
                         <h2 class="section__title">Seccion de Experiencias</h2>
                         <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
                     </div>
+
+                    <!-- Mantenemos tu clase 'rotativo' en el contenedor -->
+                    <div class="container__body rotativo">
+
+                        <!-- TARJETA 1 -->
+                        <article class="card card-experiencias">
+                            <div class="eje">
+                                <div class="cara frontal ">
+                                    <div class="card__img">
+                                        <img src="img/Ayeres.jpg" alt="imagen1">
+                                    </div>
+                                    <div class="card__body">
+                                        <span class="card__tag">Oferta</span>
+                                        <h3 class="card__title">Titulo de la tarjeta 1</h3>
+                                        <p class="card__description">Descripcion de la tarjeta</p>
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3 class="title__trasera">Titulo de la cara trasera 1</h3>
+                                    <p>Más información complementaria aquí.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- TARJETA 2 (Adaptada con la estructura correcta) -->
+                        <article class="card card-experiencias">
+                            <div class="eje">
+                                <div class="cara frontal">
+                                    <div class="card__img">
+                                        <img src="img/Postal.jpg" alt="imagen2">
+                                    </div>
+                                    <div class="card__body">
+                                        <span class="card__tag">Oferta</span>
+                                        <h3 class="card__title">Titulo de la tarjeta 2</h3>
+                                        <p class="card__description">Descripcion de la tarjeta</p>
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3 class="title__trasera">Titulo de la cara trasera 2</h3>
+                                    <p>Más información complementaria aquí.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- TARJETA 3 (Corregida la ortografía de "tracera" a "trasera") -->
+                        <article class="card card-experiencias">
+                            <div class="eje">
+                                <div class="cara frontal">
+                                    <div class="card__img">
+                                        <img src="img/Vista.jpg" alt="imagen3">
+                                    </div>
+                                    <div class="card__body">
+                                        <span class="card__tag">Oferta</span>
+                                        <h3 class="card__title">Titulo de la tarjeta 3</h3>
+                                        <p class="card__description">Descripcion de la tarjeta</p>
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3 class="title__trasera">Titulo de la cara trasera 3</h3>
+                                    <p>Más información complementaria aquí.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+            <section class="pruebas">
+                <div class="container pruebas__container">
+                    <div class="container__title">
+                        <h2 class="section__title">Titulode la seccion de pruebas</h2>
+                        <p class="section__description">Descripcion de la seccion de pruebas</p>
+                    </div>
                     <div class="container__body">
-                        
+                        <article class="card card-pruebas">
+                            <div class="eje">
+                                <div class="cara frontal">
+                                    <div class="card__img">
+                                        <img src="img/Ayeres.jpg" alt="Ayeres">
+                                    </div>
+                                    <div class="card__body">
+                                        <span class="card__tag">Oferton</span>
+                                        <h3 class="card__title">Prueba 1</h3>
+                                        <p class="card__description">Esta es la descripcion de la prueba 1</p>
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3 class="card__title">Titulo trasero de la card</h3>
+                                    <p class="card__description">descripcion trasera de la card</p>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
         </main>
     </body>
-
-
-
     <!-- Vinculación con el archivo JavaScript para la lógica del menú -->
     <script src="scriptprueb2.js"></script>
 </body>
