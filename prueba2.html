@@ -10,16 +10,7 @@
 </head>
 
 <body>
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
-        title="Chatea con nosotros por WhatsApp">
-        <!-- Icono de WhatsApp (Usando SVG para no depender de librerías externas) -->
-        <svg viewBox="0 0 32 32" class="whatsapp-icon">
-            <path
-                d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.792l-2.025 7.392 7.561-1.983c2.235 1.22 4.805 1.917 7.548 1.917 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.932 22.716c-.367 1.033-1.812 1.884-2.512 2.008-.638.113-1.472.2-4.292-.962-3.606-1.488-5.932-5.157-6.113-5.397-.18-.24-1.463-1.944-1.463-3.708 0-1.764.922-2.632 1.252-2.988.33-.356.721-.446.962-.446.24 0 .48.003.692.012.222.009.52-.084.812.619.298.719 1.018 2.484 1.107 2.665.089.18.148.39.029.628-.119.238-.179.387-.358.596-.178.21-.376.467-.538.628-.18.18-.368.377-.16.733.209.356.929 1.533 1.992 2.48 1.367 1.218 2.518 1.594 2.877 1.774.36.18.57.151.78-.093.21-.244.897-1.047 1.137-1.405.24-.358.48-.298.81-.179.33.119 2.096 1.042 2.455 1.221.359.18.598.267.687.417.089.151.089.872-.278 1.905z"
-                fill="#FFF" />
-        </svg>
-    </a>
+
     <!-- ENCABEZADO PRINCIPAL: Contiene el logo y la navegación -->
     <header class="header">
         <div class="container header__container">
@@ -46,11 +37,21 @@
 
     <body>
         <main>
+            <!-- Botón flotante de WhatsApp -->
+            <a href="https://wa.me" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+                title="Chatea con nosotros por WhatsApp">
+                <!-- Icono de WhatsApp (Usando SVG para no depender de librerías externas) -->
+                <svg viewBox="0 0 32 32" class="whatsapp-icon">
+                    <path
+                        d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.792l-2.025 7.392 7.561-1.983c2.235 1.22 4.805 1.917 7.548 1.917 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.932 22.716c-.367 1.033-1.812 1.884-2.512 2.008-.638.113-1.472.2-4.292-.962-3.606-1.488-5.932-5.157-6.113-5.397-.18-.24-1.463-1.944-1.463-3.708 0-1.764.922-2.632 1.252-2.988.33-.356.721-.446.962-.446.24 0 .48.003.692.012.222.009.52-.084.812.619.298.719 1.018 2.484 1.107 2.665.089.18.148.39.029.628-.119.238-.179.387-.358.596-.178.21-.376.467-.538.628-.18.18-.368.377-.16.733.209.356.929 1.533 1.992 2.48 1.367 1.218 2.518 1.594 2.877 1.774.36.18.57.151.78-.093.21-.244.897-1.047 1.137-1.405.24-.358.48-.298.81-.179.33.119 2.096 1.042 2.455 1.221.359.18.598.267.687.417.089.151.089.872-.278 1.905z"
+                        fill="#FFF" />
+                </svg>
+            </a>
             <section class="hero">
                 <div class="container hero__container">
                     <h1 class="title">Titulo principal</h1>
                     <p class="descripciton">Este es un parrafo de descripcon de la pagina, complementario al titulo</p>
-                    <div class="heroontainer__body">
+                    <div class="herocontainer__body">
                         <a href="servicios" class="btn">Servicos</a>
                         <a href="contactar" class="btn btn__primary">Contactar</a>
                     </div>
@@ -118,7 +119,7 @@
                     </div>
 
                     <!-- Mantenemos tu clase 'rotativo' en el contenedor -->
-                    <div class="container__body rotativo">
+                    <div class="container__body">
 
                         <!-- TARJETA 1 -->
                         <article class="card card-experiencias">
@@ -191,26 +192,121 @@
                     </div>
                     <div class="container__body">
                         <article class="card card-pruebas">
-                            <div class="eje">
-                                <div class="cara frontal">
-                                    <div class="card__img">
-                                        <img src="img/Ayeres.jpg" alt="Ayeres">
-                                    </div>
-                                    <div class="card__body">
-                                        <span class="card__tag">Oferton</span>
-                                        <h3 class="card__title">Prueba 1</h3>
-                                        <p class="card__description">Esta es la descripcion de la prueba 1</p>
-                                    </div>
+                            <div class="principal">
+                                <div class="card__img">
+                                    <img src="img/Ayeres.jpg" alt="Ayeres">
                                 </div>
-                                <div class="cara trasera">
-                                    <h3 class="card__title">Titulo trasero de la card</h3>
-                                    <p class="card__description">descripcion trasera de la card</p>
+                                <div class="card__body">
+                                    <span class="card__tag">Oferton</span>
+                                    <h3 class="card__title">Prueba 1</h3>
+                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
                                 </div>
+                            </div>
+                            <div class="cortina">
+                                <h3 class="card__title">Titulo trasero de la card</h3>
+                                <p class="card__description">descripcion trasera de la card</p>
+                            </div>
+                        </article>
+
+                        <article class="card card-pruebas">
+                            <div class="principal">
+                                <div class="card__img">
+                                    <img src="img/Ayeres.jpg" alt="Ayeres">
+                                </div>
+                                <div class="card__body">
+                                    <span class="card__tag">Oferton</span>
+                                    <h3 class="card__title">Prueba 1</h3>
+                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
+                                </div>
+                            </div>
+                            <div class="cortina lateral">
+                                <h3 class="card__title">Titulo trasero de la card</h3>
+                                <p class="card__description">descripcion trasera de la card</p>
+                            </div>
+                        </article>
+
+                        <article class="card card-pruebas">
+                            <div class="principal">
+                                <div class="card__img">
+                                    <img src="img/Ayeres.jpg" alt="Ayeres">
+                                </div>
+                                <div class="card__body">
+                                    <span class="card__tag">Oferton</span>
+                                    <h3 class="card__title">Prueba 1</h3>
+                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
+                                </div>
+                            </div>
+                            <div class="cortina esquina">
+                                <h3 class="card__title">Titulo trasero de la card</h3>
+                                <p class="card__description">descripcion trasera de la card</p>
                             </div>
                         </article>
                     </div>
                 </div>
             </section>
+            <section class="contactar">
+                <div class="container container__contactar">
+                    <div class="container__title">
+                        <h2 class="section__title">Título de la sección de pruebas</h2>
+                        <p class="section__description">Descripción de la sección de pruebas</p>
+                    </div>
+
+                    <div class="form__body">
+                        <!-- Bloque de Información -->
+                        <div class="container__inf">
+                            <h3 class="inf__title">Información de contacto</h3>
+                            <p class="inf__description">Localízanos en los siguientes medios y redes sociales:</p>
+                            <ul class="list__form">
+                                <li class="item__form">Tel: <span class="resaltado">9621234567</span></li>
+                                <li class="item__form">Email: <span class="resaltado">miCorreo@email.com</span></li>
+                                <li class="item__form">Facebook: <span class="resaltado">Taller-System</span></li>
+                                <li class="item__form">Dirección: <span class="resaltado">Col. Centro, Tapachula,
+                                        Chiapas, México.</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Bloque del Formulario -->
+                        <fieldset class="form__fieldset">
+                            <legend>Solicitud de servicio</legend>
+                            <form action="/" method="post" class="form" id="form">
+                                <div class="group__form">
+                                    <label for="nombre">Nombre:</label>
+                                    <input id="nombre" name="nombre" type="text" placeholder="Ej. Carlos Mendoza"
+                                        required>
+                                </div>
+                                <div class="group__form">
+                                    <label for="correo">Correo:</label>
+                                    <input id="correo" name="correo" type="email" placeholder="Ej. tuCorreo@email.com"
+                                        required>
+                                </div>
+                                <div class="group__form">
+                                    <label for="telefono">Teléfono:</label>
+                                    <input id="telefono" name="telefono" type="tel" placeholder="Ej. 9621234567"
+                                        required>
+                                </div>
+                                <div class="group__form">
+                                    <label for="servicio">Servicio:</label>
+                                    <select name="servicio" id="servicio" required>
+                                        <option value="" disabled selected>Selecciona una opción</option>
+                                        <option value="afinacion">Afinación</option>
+                                        <option value="frenos">Frenos</option>
+                                        <option value="llantas">Llantas</option>
+                                    </select>
+                                </div>
+                                <div class="group__form">
+                                    <label for="falla">Falla:</label>
+                                    <textarea name="falla" id="falla" rows="4" maxlength="100" minlength="10"
+                                        placeholder="Describe brevemente la falla..." required></textarea>
+                                </div>
+
+                                <!-- BOTÓN AGREGADO -->
+                                <button type="submit" class="btn__submit">Enviar Solicitud</button>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </body>
     <!-- Vinculación con el archivo JavaScript para la lógica del menú -->
