@@ -7,15 +7,397 @@
         <link rel="stylesheet" href="estilo3.css" />
     </head>
     <body>
+        <header class="header">
+            <div class="container container_header">
+                <a href="" class="logo">LOGO</a>
+                <button class="toggle">
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                    <span class="linea"></span>
+                </button>
+                <navbar class="navbar">
+                    <ul class="nav_list">
+                        <li class="nav_item">
+                            <a href="" class="nav_link">Inicio</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="" class="nav_link">Servicios</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="" class="nav_link">Experiencias</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="" class="nav_link">Contactar</a>
+                        </li>
+                    </ul>
+                </navbar>
+            </div>
+        </header>
         <main class="main">
             <section class="hero">
-                <h1 class="title__hero">Ttitulo principal</h1>
-                <p class="descripcion">Esre es un parrafa descriptivo.</p>
-                <div class="container_body">
-                    <a class="btn" href="#nosotros">Nosotros</a>
-                    <a class="btn btn_primary" href="#contactar">Contactar</a>
+                <div class="container container__hero">
+                    <h1 class="title__hero">Ttitulo principal</h1>
+                    <p class="descripcion__hero">
+                        Este es un parrafo descriptivo.
+                    </p>
+                    <div class="container__btn">
+                        <a class="btn" href="#nosotros">Nosotros</a>
+                        <a class="btn btn_primary" href="#contactar"
+                            >Contactar</a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="servicios">
+                <div class="container container__servicios">
+                    <div class="container__title">
+                        <h1 class="section__title">Titulo de la seccion h1</h1>
+                        <p class="section__description">
+                            Descripcion de la seccion
+                        </p>
+                    </div>
+                    <div class="container__cards">
+                        <article class="card card-servicios">
+                            <div class="container__title">
+                                <h2 class="card__title">
+                                    titulo de la tarjeta
+                                </h2>
+                                <p class="card_description">
+                                    Descricion de la atarjeta, solones mas
+                                    texto.
+                                </p>
+                            </div>
+                            <div class="container__img">
+                                <p>Qui va la aimagen</p>
+                            </div>
+                        </article>
+
+                        <article class="card card-servicios">
+                            <div class="container__title">
+                                <h2 class="card__title">
+                                    titulo de la tarjeta
+                                </h2>
+                                <p class="card_description">
+                                    Descricion de la atarjeta, solones mas
+                                    texto.
+                                </p>
+                            </div>
+                            <div class="container__img">
+                                <p>Qui va la aimagen</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonios">
+                <div class="container container-testimonios">
+                    <div class="container__title">
+                        <h2 class="section__title">
+                            TARJETA ROTATIVA - FLIP CARD
+                        </h2>
+                        <p class="section__description">
+                            Pendiente de especificar su uso
+                        </p>
+                    </div>
+                    <div class="container__cards">
+                        <article class="card card-testimonios">
+                            <div class="eje_rotativo">
+                                <div class="cara frontal">
+                                    <div class="container__title">
+                                        <h2 class="card__title">
+                                            titulo de la tarjeta
+                                        </h2>
+                                        <p class="card_description">
+                                            Descricion de la atarjeta, solones
+                                            mas texto.
+                                        </p>
+                                    </div>
+                                    <div class="container__img">
+                                        <img
+                                            src="/puboic/img/imagen1.jpg"
+                                            alt="imagen"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3>
+                                        este es el titulo trasero de la tarjeta
+                                    </h3>
+                                    <p>
+                                        Esta es la descripcion trasera de la
+                                        tarjeta
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card card-testimonios">
+                            <div class="eje_rotativo">
+                                <div class="cara frontal">
+                                    <div class="container__title">
+                                        <h2 class="card__title">
+                                            titulo de la tarjeta
+                                        </h2>
+                                        <p class="card_description">
+                                            Descricion de la atarjeta, solones
+                                            mas texto.
+                                        </p>
+                                    </div>
+                                    <div class="container__img">
+                                        <img
+                                            src="/puboic/img/imagen1.jpg"
+                                            alt="imagen"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="cara trasera">
+                                    <h3>
+                                        este es el titulo trasero de la tarjeta
+                                    </h3>
+                                    <p>
+                                        Esta es la descripcion trasera de la
+                                        tarjeta
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="portafolio">
+                <div class="container container__portafolio">
+                    <div class="container__title">
+                        <h2 class="section__title">
+                            TARJETA CORTINA - SLIDE-UP OVERLAY
+                        </h2>
+                        <p class="section__description">
+                            Se usa para: Gaalerias - Portafolios - Tarjetas de
+                            equipos.
+                        </p>
+                    </div>
+                    <div class="container__cards">
+                        <article class="card card-portafolio">
+                            <div class="container__title">
+                                <h2 class="card__title">
+                                    titulo de la tarjeta
+                                </h2>
+                                <p class="card_description">
+                                    Descricion de la atarjeta, solones mas
+                                    texto.
+                                </p>
+                            </div>
+                            <div class="container__img">
+                                <img
+                                    src="/puboic/img/imagen3.jpg"
+                                    alt="imagen"
+                                />
+                            </div>
+                        </article>
+                        <article class="card card-portafolio">
+                            <div class="container__title">
+                                <h3 class="card__title">
+                                    titulo de la tarjeta
+                                </h3>
+                                <p class="card_description">
+                                    Descricion de la atarjeta, solones mas
+                                    texto.
+                                </p>
+                            </div>
+                            <div class="container__img">
+                                <img
+                                    src="/puboic/img/imagen5.jpg"
+                                    alt="imagen"
+                                />
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="blog">
+                <div class="container container__blog">
+                    <div class="container__title">
+                        <h2 class="section__title">
+                            BLOG ZOOM INTERNO DE LA IMAGEN/ SCALE CROP
+                        </h2>
+                        <p class="section__description">
+                            Se usa para:
+                            <span>
+                                -Entradas de blog - Tarjetas de productos -
+                                Destinos turisticos
+                            </span>
+                        </p>
+                    </div>
+                    <div class="container__cards">
+                        <article class="card card-blog">
+                            <div class="card__title">
+                                <h3>Tidulo de la card</h3>
+                                <p>Descripcion de la card</p>
+                            </div>
+                            <div class="container__img">
+                                <img
+                                    src="/public/img/imagen1.jpg"
+                                    alt="Imagen de muestra"
+                                />
+                            </div>
+                        </article>
+                        <article class="card card-blog">
+                            <div class="card__title">
+                                <h3>Tidulo de la card</h3>
+                                <p>Descripcion de la card</p>
+                            </div>
+                            <div class="container__img">
+                                <img
+                                    src="/public/img/imagen2.jpg"
+                                    alt="Imagen de muestra"
+                                />
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="contactar">
+                <div class="container container__contactar">
+                    <div class="container__title">
+                        <h2 class="section__title">Agendar Cita</h2>
+                        <p class="section__description">
+                            Contactanos o acude al taller, te mostrams toda
+                            nustra informacion de contacto y ubicacion.
+                        </p>
+                    </div>
+                    <div class="container__cards">
+                        <div class="inf">
+                            <ul class="inf_list">
+                                <li class="inf__item">
+                                    Tel:
+                                    <span class="resaltado">9621234567</span>
+                                </li>
+                                <li class="inf__item">
+                                    Email:
+                                    <span class="resaltado"
+                                        >correo@email.com</span
+                                    >
+                                </li>
+                                <li class="inf__item">
+                                    Direccion:
+                                    <span class="resaltado"
+                                        >Col. Centro, Tapachula, Chiapas</span
+                                    >
+                                </li>
+                                <li class="inf__item">
+                                    Instagram:
+                                    <span class="resaltado"> El taller </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <form
+                            id="form-mecanico"
+                            class="form-mecanico"
+                            novalidate
+                        >
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">
+                                    Solicitud de Soporte Técnico
+                                </legend>
+
+                                <!-- Campo: Nombre -->
+                                <div class="form__group">
+                                    <label
+                                        for="cliente-nombre"
+                                        class="form__label"
+                                        >Nombre completo:</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="cliente-nombre"
+                                        name="nombre"
+                                        class="form__input"
+                                        placeholder="Ej. Carlos Mendoza"
+                                        required
+                                        autocomplete="name"
+                                    />
+                                </div>
+
+                                <!-- Campo: Email -->
+                                <div class="form__group">
+                                    <label
+                                        for="cliente-email"
+                                        class="form__label"
+                                        >Correo electrónico:</label
+                                    >
+                                    <input
+                                        type="email"
+                                        id="cliente-email"
+                                        name="email"
+                                        class="form__input"
+                                        placeholder="carlos@correo.com"
+                                        required
+                                        autocomplete="email"
+                                    />
+                                </div>
+
+                                <!-- Campo: Selección de Servicio -->
+                                <div class="form__group">
+                                    <label
+                                        for="servicio-tipo"
+                                        class="form__label"
+                                        >Selecciona el servicio:</label
+                                    >
+                                    <select
+                                        id="servicio-tipo"
+                                        name="servicio"
+                                        class="form__input form__input--select"
+                                        required
+                                    >
+                                        <option value="" disabled selected>
+                                            -- Selecciona una opción --
+                                        </option>
+                                        <option value="mantenimiento">
+                                            Mantenimiento General / Afinación
+                                        </option>
+                                        <option value="frenos">
+                                            Sistema de Frenos
+                                        </option>
+                                        <option value="motor">
+                                            Fallo en el Motor o Transmisión
+                                        </option>
+                                        <option value="electrico">
+                                            Sistema Eléctrico / Batería
+                                        </option>
+                                        <option value="otro">
+                                            Otro Servicio
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo: Área de texto del problema -->
+                                <div class="form__group">
+                                    <label
+                                        for="problema-descripcion"
+                                        class="form__label"
+                                        >Especifica el problema mecánico:</label
+                                    >
+                                    <textarea
+                                        id="problema-descripcion"
+                                        name="problema"
+                                        class="form__input form__input--textarea"
+                                        placeholder="Ej. Siento un ruido extraño al frenar y el testigo del tablero se encendió..."
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <!-- Botón de Envío -->
+                                <button
+                                    type="submit"
+                                    class="form__button"
+                                    id="btn-enviar-mecanico"
+                                >
+                                    Enviar Solicitud
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>
+        <script src="script3.js"></script>
     </body>
 </html>
