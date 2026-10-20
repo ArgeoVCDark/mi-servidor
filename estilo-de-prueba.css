@@ -1,0 +1,134 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #4b5563;
+    --text-color: #1f2937;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+    --container-padding: 1.25rem;/*20PX*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: var(--white);
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+}
+
+/* Componentes Genéricos */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+.btn-primary { background-color: var(--primary-color); color: var(--white); }
+.btn-secondary { background-color: #e5e7eb; color: var(--text-color); }
+
+/* ==========================================
+   2. ESTILOS MÓVIL (Por defecto: 320px - 480px)
+   ========================================== */
+.header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    text-align: center;
+}
+.nav-links a { color: var(--secondary-color); text-decoration: none; }
+.btn-header { width: 100%; }
+
+/* Hero Móvil */
+.hero-section { padding: 3rem 0; background-color: var(--bg-light); }
+.hero-content { text-align: center; }
+.hero-content h1 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 1.5rem; }
+.hero-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-image-wrapper { margin-top: 2rem; }
+.hero-placeholder-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); height: 200px; border-radius: 0.5rem; }
+
+/* Características Móvil */
+.features-section { padding: 4rem 0; }
+.section-title { text-align: center; font-size: 1.75rem; margin-bottom: 2rem; }
+.features-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+.feature-card { padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+
+.site-footer { padding: 2rem 0; background-color: #111827; color: var(--white); text-align: center; font-size: 0.875rem; }
+
+/* ==========================================
+   3. BREAKPOINTS RESPONSIVOS (Media Queries)
+   ========================================== */
+
+/* --- PEQUEÑO (Móviles horizontales: 481px a 767px) --- */
+@media (min-width: 481px) {
+    .hero-actions { flex-direction: row; justify-content: center; }
+    .hero-placeholder-image { height: 280px; }
+}
+
+/* --- MEDIANO (Tablets: 768px a 991px) --- */
+@media (min-width: 768px) {
+    .container { max-width: 720px; }
+    .header-flex { flex-direction: row; justify-content: space-between; }
+    .nav-links { flex-direction: row; gap: 1.5rem; }
+    .btn-header { width: auto; }
+    
+    /* El Hero se convierte en 2 columnas */
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .hero-content { text-align: left; }
+    .hero-actions { justify-content: flex-start; }
+    .hero-image-wrapper { margin-top: 0; }
+    
+    /* Las características se dividen en columnas */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+}
+
+/* --- GRANDE (Laptops: 992px a 1199px) --- */
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+    .hero-content h1 { font-size: 2.75rem; }
+    .hero-placeholder-image { height: 350px; }
+}
+
+/* --- EXTRA GRANDE (Desktop estándar: 1200px a 1399px) --- */
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+    :root { --container-padding: 0px; } /* Ya no necesitamos tanto padding interno */
+    .hero-content h1 { font-size: 3.25rem; }
+    .hero-placeholder-image { height: 400px; }
+}
+
+/* --- ULTRA WIDE (Monitores grandes: ≥ 1400px) --- */
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+    .hero-content h1 { font-size: 3.75rem; }
+    .hero-placeholder-image { height: 450px; }
+}

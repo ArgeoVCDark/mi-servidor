@@ -1,0 +1,524 @@
+/*////////////////////////////////////////////
+estilos generales
+////////////////////////////////////////////*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bag: rgb(202, 204, 204);
+    --paddin: 1.25rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+
+
+/* Estilos del botón flotante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde abajo */
+    right: 20px;
+    /* Distancia desde la derecha */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    /* Verde oficial de WhatsApp */
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    /* Asegura que quede por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    /* Se agranda un poco */
+    background-color: #128c7e;
+    /* Verde más oscuro */
+}
+
+/* Estilos del icono SVG */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/*////////////////////////////////////////////
+Estilos  Movil smaall>=320 - 480
+////////////////////////////////////////////*/
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: whitesmoke;
+    z-index: 100;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.header_logo {
+    font-weight: 900;
+    color: black;
+}
+
+.btn_toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 1rem;
+
+}
+
+.linea {
+    width: 24px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.btn_toggle.active .linea:first-child {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.btn_toggle.active .linea:nth-child(2) {
+    opacity: 0;
+}
+
+.btn_toggle.active .linea:last-child {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.navbar {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    transition: 0.5s ease-out;
+}
+
+.navbar.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: var(--paddin);
+}
+
+.navbar_item {
+    width: 100%;
+}
+
+.navbar_link {
+    display: block;
+    text-align: center;
+    padding: 6px 0;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
+}
+
+.navbar_link:hover {
+    color: white;
+    background-color: blue;
+    transform: scale(1.03);
+    box-shadow: 0 1px 0 white;
+}
+
+/*////////////////////////////////////////////
+///////estilos generales-comunes
+////////////////////////////////////////////*/
+.hero {
+    background: linear-gradient(135deg, rgb(0, 0, 206) 0%, rgb(0, 0, 133) 100%);
+
+}
+
+.hero__container {
+    min-height: 80vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.title {
+    margin-bottom: .5rem;
+    font-size: 3rem;
+}
+
+.descripciton {
+    font-size: 1.5rem;
+}
+
+.heroontainer__body {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: blue;
+    color: white;
+}
+
+.btn__primary {
+    background-color: rgb(0, 183, 255);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn__primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    /* 7. Cambié gray/black por un degradado blanco translúcido más realista */
+
+    transform: skewX(-30deg);
+    animation: destello 3s linear infinite normal;
+}
+
+@keyframes destello {
+
+    0% {
+        left: -50%;
+    }
+
+    30% {
+        left: 100%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+/*////////////////////////////////////////////
+///////estilos generales-comunes
+////////////////////////////////////////////*/
+.container__title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section__description {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.container__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.card {
+    max-width: 368px;
+    height: 500px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: -4px 4px 10px  rgba(255, 255, 255, .1);
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: -4px 6px 10px rgb(255,255, 255, .4);
+}
+
+.card__img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__tag {
+    background-color: rgb(0, 183, 255);
+    padding: 4px 6px;
+    border-radius: 10px;
+
+    position: relative;
+}
+
+.card__tag::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-30deg);
+    animation: destello 3s infinite linear;
+}
+
+.card__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0 1.5rem;
+}
+
+.card__description {
+    font-size: 1rem;
+    font-weight: 600;
+    color: gray;
+}
+
+/*////////////////////////////////////////////
+///////Section servicio
+////////////////////////////////////////////*/
+.servicios__container {
+    background-color: chocolate;
+
+}
+
+/*////////////////////////////////////////////
+///////Section experiencias
+////////////////////////////////////////////*/
+.experiencias__container {
+    background-color: aqua;
+}
+.card-experiencias{
+    perspective: 1000px;
+    background-color: transparent;
+    box-shadow: none;
+}
+.eje{
+    width: 100%;
+    height: 500px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    position: relative;
+}
+/* Cancela el movimiento y la sombra en el hover de la tarjeta de experiencias */
+.card-experiencias:hover {
+    transform: none; /* Evita que la tarjeta salte hacia arriba */
+    box-shadow: none; /* Elimina la sombra por defecto en el contenedor exterior */
+}
+
+.card-experiencias:hover .eje{
+    transform: rotateY(180deg);
+}
+.cara{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.frontal{
+    background-color: white;
+}
+.trasera{
+    background-color: darkgreen;
+    transform: rotateY(180deg);
+}
+/*////////////////////////////////////////////
+///////Section pruebas
+////////////////////////////////////////////*/
+.pruebas__container {
+    background-color: cornflowerblue;
+}
+
+/*////////////////////////////////////////////
+Estilos  Movil >=481 - 767
+////////////////////////////////////////////*/
+@media(min-width:481px) {
+    .heroontainer__body {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*////////////////////////////////////////////
+Estilos tablet >=768 -991
+////////////////////////////////////////////*/
+@media(min-width: 768px) {
+
+    .btn_toggle {
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    .navbar {
+        opacity: 1;
+        pointer-events: auto;
+        position: static;
+        width: max-content;
+        display: flex;
+        transition: 0.5s ease-out;
+    }
+
+    .navbar_list {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    .navbar_item {
+        width: auto;
+    }
+
+    .navbar_link {
+        display: inline;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .container__body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+/*////////////////////////////////////////////
+Estilos laptop >=992 - 1199
+////////////////////////////////////////////*/
+@media(min-width:992px) {
+    .container__body {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+
+/*////////////////////////////////////////////
+Estilos desktop >=1200- 1399
+////////////////////////////////////////////*/
+@media(min-width:1200px) {
+
+    .heroontainer__body {
+        gap: 10rem;
+    }
+}
+
+/*////////////////////////////////////////////
+Estilos ultra wide>=1400
+////////////////////////////////////////////*/
+@media(min-width:1400px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////
+Estilos  Movil smaall>=320 - 480
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos  Movil >=481 - 767
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos tablet >=768 -991
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos laptop >=992 - 1199
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos desktop >=1200- 1399
+////////////////////////////////////////////*/
+/*////////////////////////////////////////////
+Estilos ultra wide>=1400
+////////////////////////////////////////////*/
