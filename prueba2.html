@@ -4,312 +4,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba 2 - Responsiva</title>
-    <!-- Vinculación con el archivo de estilos CSS -->
+    <title>Landing Page Profesional - Galería Moderna</title>
+    <!-- 🛠️ Enlace corregido a tu hoja de estilos personalizada -->
     <link rel="stylesheet" href="estilo2.css">
 </head>
 
 <body>
 
-    <!-- ENCABEZADO PRINCIPAL: Contiene el logo y la navegación -->
-    <header class="header">
-        <div class="container header__container">
-            <!-- Logo del sitio web -->
-            <a href="#" class="header_logo">RH-SYSTEM</a>
+    <!-- BOTÓN FLOTANTE DE WHATSAPP ACCESIBLE -->
+    <a href="https://wa.me" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat por WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+    </a>
 
-            <!-- Botón de hamburguesa para desplegar el menú en móviles -->
-            <button class="btn_toggle">
-                <span class="linea"></span>
-                <span class="linea"></span>
-                <span class="linea"></span>
+    <!-- HEADER & NAVEGACIÓN INTERACTIVA -->
+    <header class="main-header">
+        <div class="container container__nav">
+            <a href="#" class="logo">Visual<span>Studio</span></a>
+            <!-- Agrega este botón dentro de <div class="container container__nav"> -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema visual">
+                <span class="theme-btn__icon">🌙</span>
             </button>
-            <!-- Barra de navegación (Menú desplegable en móvil) -->
+
+
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <nav class="navbar">
-                <ul class="navbar_list">
-                    <li class="navbar_item"><a href="#inicio" class="navbar_link">Inicio</a></li>
-                    <li class="navbar_item"><a href="#servicios" class="navbar_link">Servicios</a></li>
-                    <li class="navbar_item"><a href="#experiencia" class="navbar_link">Experiencia</a></li>
-                    <li class="navbar_item"><a href="#contacto" class="navbar_link">Contactar</a></li>
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#galeria" class="nav-link">Galería</a></li>
+                    <li><a href="#historia" class="nav-link">Historia</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <body>
-        <main>
-            <!-- Botón flotante de WhatsApp -->
-            <a href="https://wa.me" class="whatsapp-btn" target="_blank" rel="noopener noreferrer"
-                title="Chatea con nosotros por WhatsApp">
-                <!-- Icono de WhatsApp (Usando SVG para no depender de librerías externas) -->
-                <svg viewBox="0 0 32 32" class="whatsapp-icon">
-                    <path
-                        d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.792l-2.025 7.392 7.561-1.983c2.235 1.22 4.805 1.917 7.548 1.917 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.932 22.716c-.367 1.033-1.812 1.884-2.512 2.008-.638.113-1.472.2-4.292-.962-3.606-1.488-5.932-5.157-6.113-5.397-.18-.24-1.463-1.944-1.463-3.708 0-1.764.922-2.632 1.252-2.988.33-.356.721-.446.962-.446.24 0 .48.003.692.012.222.009.52-.084.812.619.298.719 1.018 2.484 1.107 2.665.089.18.148.39.029.628-.119.238-.179.387-.358.596-.178.21-.376.467-.538.628-.18.18-.368.377-.16.733.209.356.929 1.533 1.992 2.48 1.367 1.218 2.518 1.594 2.877 1.774.36.18.57.151.78-.093.21-.244.897-1.047 1.137-1.405.24-.358.48-.298.81-.179.33.119 2.096 1.042 2.455 1.221.359.18.598.267.687.417.089.151.089.872-.278 1.905z"
-                        fill="#FFF" />
-                </svg>
-            </a>
-            <section class="hero">
-                <div class="container hero__container">
-                    <h1 class="title">Titulo principal</h1>
-                    <p class="descripciton">Este es un parrafo de descripcon de la pagina, complementario al titulo</p>
-                    <div class="herocontainer__body">
-                        <a href="servicios" class="btn">Servicos</a>
-                        <a href="contactar" class="btn btn__primary">Contactar</a>
-                    </div>
+    <!-- CONTENIDO PRINCIPAL (5 SECCIONES COMPLETAS) -->
+    <main>
+
+        <!-- SECCIÓN 1: HERO -->
+        <section id="inicio" class="hero-section">
+            <div class="container container__hero">
+                <div class="hero-text">
+                    <h1>CAPTURA LA ESCENCIA DEL MAÑANA</h1>
+                    <p>Explora perspectivas únicas a través de lentes profesionales. Diseños digitales, fotografía
+                        editorial y conceptos visuales de vanguardia.</p>
+                    <a href="#contacto" class="btn btn-cta">Iniciar Proyecto</a>
                 </div>
-            </section>
-            <section class="servicios">
-                <div class="container servicios__container">
-                    <div class="container__title">
-                        <h2 class="section__title">Seccion de servicios</h2>
-                        <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
-                    </div>
-                    <div class="container__body">
-                        <article class="card card-servicios">
-                            <div class="card__img">
-                                <img src="img/Camino.jpg" alt="Imagen 1">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__tag">Oferta llamativa</span>
-                                <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
-                                    o hacia que esta enfocado</p>
-                            </div>
-                        </article>
-                        <article class="card card-servicios">
-                            <div class="card__img">
-                                <img src="img/Camino.jpg" alt="Imagen 1">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__tag">Oferta llamativa</span>
-                                <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
-                                    o hacia que esta enfocado</p>
-                            </div>
-                        </article>
-                        <article class="card card-servicios">
-                            <div class="card__img">
-                                <img src="img/Camino.jpg" alt="Imagen 1">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__tag">Oferta llamativa</span>
-                                <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
-                                    o hacia que esta enfocado</p>
-                            </div>
-                        </article>
-                        <article class="card card-servicios">
-                            <div class="card__img">
-                                <img src="img/Camino.jpg" alt="Imagen 1">
-                            </div>
-                            <div class="card__body">
-                                <span class="card__tag">Oferta llamativa</span>
-                                <h3 class="card__title">Titulo de la card</h3>
-                                <p class="card__description">Descripcion de la tarjeta, de que trata, cual es su funcion
-                                    o hacia que esta enfocado</p>
-                            </div>
-                        </article>
-                    </div>
+                <div class="hero-image rotate-effect">
+                    <img src="img/Vista.jpg" alt="Vista panorámica conceptual y moderna" class="fade-in-image">
                 </div>
-            </section>
-            <section class="Experiencias">
-                <div class="container experiencias__container">
-                    <div class="container__title">
-                        <h2 class="section__title">Seccion de Experiencias</h2>
-                        <p class="section__description">Aqui una pequeña descripcion de la seccion.</p>
-                    </div>
+            </div>
+        </section>
 
-                    <!-- Mantenemos tu clase 'rotativo' en el contenedor -->
-                    <div class="container__body">
+        <!-- SECCIÓN 2: GALERÍA (Con Carrusel UX Inteligente) -->
+        <section id="galeria" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Portafolio Reciente</h2>
 
-                        <!-- TARJETA 1 -->
-                        <article class="card card-experiencias">
-                            <div class="eje">
-                                <div class="cara frontal ">
-                                    <div class="card__img">
-                                        <img src="img/Ayeres.jpg" alt="imagen1">
-                                    </div>
-                                    <div class="card__body">
-                                        <span class="card__tag">Oferta</span>
-                                        <h3 class="card__title">Titulo de la tarjeta 1</h3>
-                                        <p class="card__description">Descripcion de la tarjeta</p>
-                                    </div>
-                                </div>
-                                <div class="cara trasera">
-                                    <h3 class="title__trasera">Titulo de la cara trasera 1</h3>
-                                    <p>Más información complementaria aquí.</p>
-                                </div>
-                            </div>
-                        </article>
+                <div class="ux-carousel" id="portfolioCarousel">
+                    <div class="carousel-viewport">
+                        <div class="carousel-inner-track">
 
-                        <!-- TARJETA 2 (Adaptada con la estructura correcta) -->
-                        <article class="card card-experiencias">
-                            <div class="eje">
-                                <div class="cara frontal">
-                                    <div class="card__img">
-                                        <img src="img/Postal.jpg" alt="imagen2">
-                                    </div>
-                                    <div class="card__body">
-                                        <span class="card__tag">Oferta</span>
-                                        <h3 class="card__title">Titulo de la tarjeta 2</h3>
-                                        <p class="card__description">Descripcion de la tarjeta</p>
-                                    </div>
+                            <article class="gallery-card carousel-item">
+                                <div class="card-img-wrapper">
+                                    <img src="img/Ayeres.jpg" alt="Fotografía conceptual Averes">
                                 </div>
-                                <div class="cara trasera">
-                                    <h3 class="title__trasera">Titulo de la cara trasera 2</h3>
-                                    <p>Más información complementaria aquí.</p>
+                                <div class="card-content">
+                                    <h3>Perspectiva Ayeres</h3>
+                                    <p>Fotografía de autor con enfoque minimalista.</p>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
 
-                        <!-- TARJETA 3 (Corregida la ortografía de "tracera" a "trasera") -->
-                        <article class="card card-experiencias">
-                            <div class="eje">
-                                <div class="cara frontal">
-                                    <div class="card__img">
-                                        <img src="img/Vista.jpg" alt="imagen3">
-                                    </div>
-                                    <div class="card__body">
-                                        <span class="card__tag">Oferta</span>
-                                        <h3 class="card__title">Titulo de la tarjeta 3</h3>
-                                        <p class="card__description">Descripcion de la tarjeta</p>
-                                    </div>
+                            <article class="gallery-card carousel-item">
+                                <div class="card-img-wrapper">
+                                    <img src="img/Camino.jpg" alt="Fotografía de paisaje Camino">
                                 </div>
-                                <div class="cara trasera">
-                                    <h3 class="title__trasera">Titulo de la cara trasera 3</h3>
-                                    <p>Más información complementaria aquí.</p>
+                                <div class="card-content">
+                                    <h3>El Camino Abierto</h3>
+                                    <p>Exploración visual de texturas y líneas de fuga.</p>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
 
-                    </div>
-                </div>
-            </section>
-            <section class="pruebas">
-                <div class="container pruebas__container">
-                    <div class="container__title">
-                        <h2 class="section__title">Titulode la seccion de pruebas</h2>
-                        <p class="section__description">Descripcion de la seccion de pruebas</p>
-                    </div>
-                    <div class="container__body">
-                        <article class="card card-pruebas">
-                            <div class="principal">
-                                <div class="card__img">
-                                    <img src="img/Ayeres.jpg" alt="Ayeres">
+                            <article class="gallery-card carousel-item">
+                                <div class="card-img-wrapper">
+                                    <img src="img/Postal.jpg" alt="Composición de estilo Postal">
                                 </div>
-                                <div class="card__body">
-                                    <span class="card__tag">Oferton</span>
-                                    <h3 class="card__title">Prueba 1</h3>
-                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
+                                <div class="card-content">
+                                    <h3>Captura Postal</h3>
+                                    <p>Encuadres perfectos diseñados para conectar.</p>
                                 </div>
-                            </div>
-                            <div class="cortina">
-                                <h3 class="card__title">Titulo trasero de la card</h3>
-                                <p class="card__description">descripcion trasera de la card</p>
-                            </div>
-                        </article>
+                            </article>
 
-                        <article class="card card-pruebas">
-                            <div class="principal">
-                                <div class="card__img">
-                                    <img src="img/Ayeres.jpg" alt="Ayeres">
+                            <article class="gallery-card carousel-item">
+                                <div class="card-img-wrapper">
+                                    <img src="img/Vista.jpg" alt="Vista panorámica conceptual">
                                 </div>
-                                <div class="card__body">
-                                    <span class="card__tag">Oferton</span>
-                                    <h3 class="card__title">Prueba 1</h3>
-                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
+                                <div class="card-content">
+                                    <h3>Horizonte Futuro</h3>
+                                    <p>Composiciones visuales digitales de vanguardia.</p>
                                 </div>
-                            </div>
-                            <div class="cortina lateral">
-                                <h3 class="card__title">Titulo trasero de la card</h3>
-                                <p class="card__description">descripcion trasera de la card</p>
-                            </div>
-                        </article>
+                            </article>
 
-                        <article class="card card-pruebas">
-                            <div class="principal">
-                                <div class="card__img">
-                                    <img src="img/Ayeres.jpg" alt="Ayeres">
-                                </div>
-                                <div class="card__body">
-                                    <span class="card__tag">Oferton</span>
-                                    <h3 class="card__title">Prueba 1</h3>
-                                    <p class="card__description">Esta es la descripcion de la prueba 1</p>
-                                </div>
-                            </div>
-                            <div class="cortina esquina">
-                                <h3 class="card__title">Titulo trasero de la card</h3>
-                                <p class="card__description">descripcion trasera de la card</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <section class="contactar">
-                <div class="container container__contactar">
-                    <div class="container__title">
-                        <h2 class="section__title">Título de la sección de pruebas</h2>
-                        <p class="section__description">Descripción de la sección de pruebas</p>
-                    </div>
-
-                    <div class="form__body">
-                        <!-- Bloque de Información -->
-                        <div class="container__inf">
-                            <h3 class="inf__title">Información de contacto</h3>
-                            <p class="inf__description">Localízanos en los siguientes medios y redes sociales:</p>
-                            <ul class="list__form">
-                                <li class="item__form">Tel: <span class="resaltado">9621234567</span></li>
-                                <li class="item__form">Email: <span class="resaltado">miCorreo@email.com</span></li>
-                                <li class="item__form">Facebook: <span class="resaltado">Taller-System</span></li>
-                                <li class="item__form">Dirección: <span class="resaltado">Col. Centro, Tapachula,
-                                        Chiapas, México.</span></li>
-                            </ul>
                         </div>
+                    </div>
 
-                        <!-- Bloque del Formulario -->
-                        <fieldset class="form__fieldset">
-                            <legend>Solicitud de servicio</legend>
-                            <form action="/" method="post" class="form" id="form">
-                                <div class="group__form">
-                                    <label for="nombre">Nombre:</label>
-                                    <input id="nombre" name="nombre" type="text" placeholder="Ej. Carlos Mendoza"
-                                        required>
-                                </div>
-                                <div class="group__form">
-                                    <label for="correo">Correo:</label>
-                                    <input id="correo" name="correo" type="email" placeholder="Ej. tuCorreo@email.com"
-                                        required>
-                                </div>
-                                <div class="group__form">
-                                    <label for="telefono">Teléfono:</label>
-                                    <input id="telefono" name="telefono" type="tel" placeholder="Ej. 9621234567"
-                                        required>
-                                </div>
-                                <div class="group__form">
-                                    <label for="servicio">Servicio:</label>
-                                    <select name="servicio" id="servicio" required>
-                                        <option value="" disabled selected>Selecciona una opción</option>
-                                        <option value="afinacion">Afinación</option>
-                                        <option value="frenos">Frenos</option>
-                                        <option value="llantas">Llantas</option>
-                                    </select>
-                                </div>
-                                <div class="group__form">
-                                    <label for="falla">Falla:</label>
-                                    <textarea name="falla" id="falla" rows="4" maxlength="100" minlength="10"
-                                        placeholder="Describe brevemente la falla..." required></textarea>
-                                </div>
+                    <button class="carousel-arrow prev" aria-label="Anterior">❮</button>
+                    <button class="carousel-arrow next" aria-label="Siguiente">❯</button>
+                    <div class="carousel-dots-container"></div>
+                </div>
 
-                                <!-- BOTÓN AGREGADO -->
-                                <button type="submit" class="btn__submit">Enviar Solicitud</button>
-                            </form>
-                        </fieldset>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: HISTORIA -->
+        <section id="historia" class="about-section">
+            <div class="container container__about">
+                <div class="about-image curtain-reveal">
+                    <div class="curtain-layer"></div>
+                    <img src="img/Camino.jpg" alt="Nuestra trayectoria visual">
+                </div>
+                <div class="about-text">
+                    <h2>CREANDO CAMINOS VISUALES</h2>
+                    <p>Nos dedicamos a transformar ideas abstractas en narrativas visuales potentes. Cada imagen cuenta
+                        una historia; cada píxel está calculado para generar una experiencia de usuario única y
+                        memorable.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item"><strong>150+</strong>
+                            <p>Proyectos</p>
+                        </div>
+                        <div class="stat-item"><strong>99%</strong>
+                            <p>Clientes Felices</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
-    </body>
-    <!-- Vinculación con el archivo JavaScript para la lógica del menú -->
+        <!-- SECCIÓN 4: SERVICIOS -->
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="services-grid">
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon">📷</div>
+                                <h3>Fotografía Editorial</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Sesiones de alto nivel adaptadas a la identidad de tu marca o producto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon">🎨</div>
+                                <h3>Diseño de Producto</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Conceptualización visual y maquetación digital de interfaces modernas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="service-icon">⚡</div>
+                                <h3>Optimización UX/UI</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Estructuras pensadas en la conversión y la accesibilidad digital universal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: FORMULARIO -->
+        <section id="contacto" class="contact-section">
+            <div class="container container__contact">
+                <div class="contact-info">
+                    <h2>¿TIENES UN PROYECTO EN MENTE?</h2>
+                    <p>Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas hábiles. Vamos a
+                        crear algo increíble juntos.</p>
+                </div>
+                <form class="contact-form" id="mainForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" required placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" required placeholder="juan@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" rows="5" required placeholder="Cuéntanos sobre tu idea..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+                </form>
+                <form action="/" class="form2">
+                    <div class="group_form2">
+                        <label for="nombre">Nombr</label>
+                        <input type="text" id="nombre" placeholder="Ej. Argeo Nunez" required>
+                    </div>
+                    <div class="group_form2">
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" placeholder="Ej. miCorreo@email.com" required>
+                    </div>
+                    <div class="group_form2">
+                        <label for="servico">Servicio</label>
+                        <select name="servicio" id="servicio" required>
+                            <option value="" selected disabled>Selecciona una opcion:</option>
+                            <option value="frenos">Frenos</option>
+                            <option value="llantas">LLlantas</option>
+                            <option value="preventivo">Preventivo</option>
+                        </select>
+                    </div>
+                    <div class="group_form2">
+                        <label for="falla">Falla</label>
+                        <textarea name="falla" id="falla" placeholder="El. motro vibra y hecha humo"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container container__footer">
+            <p>&copy; 2026 VisualStudio. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🛠️ Enlace corregido a tu script de interacciones personalizado -->
     <script src="scriptprueb2.js"></script>
 </body>
 

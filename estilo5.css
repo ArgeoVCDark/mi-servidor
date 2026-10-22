@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-ligth: #c5c5c5;
+    --bg-dark: #aeaeae;
+    --color-primary: black;
+    --color-secondary: rgb(4, 0, 255);
+    --text-muted: #555555;
+    --radius-btn: 30px;
+    --radius-card: 16px;
+    --transition-smooth: all 0.5s cubic-bezier;
+
+    --showdow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --showdow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --gradient-hero: linear-gradient(-45deg, rgba(#123456, #345678, #6789ab, #cdef01));
+    --gradient-card: linear-gradient(135deg, #345678 0%, #6789ab 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+html {
+    font-family: sans-serif;
+    background-color: var(--bg-ligth);
+}
+
+.header {
+    width: 100%;
+    background-color: var(--color-primary);
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+    margin: 0 auto;
+}
+
+.container-header {
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid rgb(82, 81, 81);
+    padding: 1.5rem
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.diaNoche {
+    font-size: 1rem;
+    font-weight: 800;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle {
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform 3s;
+    background-color: transparent;
+    border: none;
+}
+
+.toggle.active .linea:first-child {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.toggle.active .linea:nth-child(2) {
+    opacity: 0;
+    ;
+}
+
+.toggle.active .linea:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+
+}
+
+.linea {
+    width: 24px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.navbar {
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: orange;
+    z-index: 10;
+}
+
+.navbar.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+
+}
+
+.navbar__item {
+    width: 70%;
+    border-radius: 12px;
+}
+
+.navbar__link {
+    display: block;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar__item:hover {
+    box-shadow: 0 4px 10px white;
+    background-color: orangered;
+    color: white;
+
+}
+
+.navbar__link:hover {
+    color: white;
+}
+
+.hero {
+    height: auto;
+    background: linear-gradient(135deg, blue 0%, black 100%);
+}
+
+.container-hero {
+    height: 100%;
+    padding: 0;
+}
+
+.container__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    padding: 5rem 0;
+}
+
+
+.hero__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.description {
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: gray;
+}
+
+.container__btn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.btn {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 4px 4px white;
+    background-color: orange;
+    padding: 1.7rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+}
+
+.btn:hover {
+    background-color: rgb(250, 183, 59);
+    box-shadow: 0 4px 4px 4px rgb(198, 27, 27);
+
+
+}
+
+.btn-primary {
+    background-color: chocolate;
+}
+
+.btn-primary:hover {
+    background-color: rgb(250, 183, 59);
+}
+
+.container__rigth {
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+}
+
+.ciculo {
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 35%;
+    background-color: violet;
+    margin: auto;
+    animation: rotacion 4s infinite;
+}
+
+
+
+.servicio {
+    background-color: rgb(0, 0, 255);
+}
+
+
+.container__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 3rem;
+
+}
+
+.container__grid {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 12px;
+    width: 100%;
+    /* 🎯 Ajuste clave: ocupa el 100% del espacio que le dé la columna de Grid */
+    max-width: 360px;
+    /* Evita que en pantallas de una sola columna la tarjeta se estire infinitamente hacia los lados */
+    height: 500px;
+    background-color: #f8f9fa;
+    margin: 0 auto;
+    /* Centra la tarjeta si la columna es más ancha que su max-width */
+}
+
+.card-servicio {
+    box-shadow: -10px 14px 15px rgb(214, 216, 226);
+    transition: transform .3s;
+}
+
+
+.card-servicio:hover {
+    transform: translateY(-16px);
+    box-shadow: -10px 10px 10px rgb(46, 81, 255);
+
+
+}
+
+.card__img {
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    /* 🎯 Ajuste clave: ahora se adapta a la tarjeta, no importa el tamaño */
+    height: 200px;
+    object-fit: cover;
+    /* 🎯 Corregido: sin la "s" al final para que recorte la imagen limpiamente */
+}
+
+
+.card__head {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+
+
+
+
+
+@keyframes rotacion {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*////////////////////////////////////
+            testimonials
+ //////////////////////////////////*/
+
+/* ==========================================================================
+   SECCIÓN TESTIMONIOS: ANIMACIÓN ESCALONADA (UX PREMIUM)
+   ========================================================================== */
+
+/* Estado inicial: Ocultamos las tarjetas antes de que el sensor las detecte */
+.testimonials--grid .card--testimonial {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Empiezan 30px abajo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Para el efecto hover de después */
+}
+
+/* Cuando el sensor JS inyecta la clase .reveal, activamos la animación */
+.testimonials--grid.reveal .card--testimonial {
+    animation: aparicion 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 🎯 EL TRUCO MAESTRO: Tiempos escalonados para cada tarjeta */
+.testimonials--grid.reveal .card--testimonial:nth-child(1) {
+    animation-delay: 0.1s;
+    /* Aparece casi de inmediato */
+}
+
+.testimonials--grid.reveal .card--testimonial:nth-child(2) {
+    animation-delay: 0.3s;
+    /* Espera 300ms */
+}
+
+.testimonials--grid.reveal .card--testimonial:nth-child(3) {
+    animation-delay: 0.5s;
+    /* Espera 500ms */
+}
+
+/* Definición de la animación de aparición */
+@keyframes aparicion {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Sube a su posición original */
+    }
+}
+
+/* Efecto Hover extra para el usuario */
+.testimonials--grid.reveal .card--testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+@media(min-width:480px) {
+    .container__btn {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+
+
+    }
+
+
+}
+
+@media(min-width:768px) {
+    .container-hero {
+        flex-direction: row;
+    }
+
+    .container__rigth {
+        height: 100%;
+        padding: 3rem;
+    }
+
+    .container__btn {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container__grid {
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media(min-width:1200px) {
+    .toggle {
+        display: none;
+    }
+
+    .navbar {
+        position: static;
+        opacity: 1;
+        pointer-events: visible;
+        background-color: transparent;
+        width: auto;
+    }
+
+    .navbar__list {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .navbar__item {
+        width: auto;
+        border-radius: 0;
+
+    }
+
+    .navbar__link {
+        display: inline;
+        color: white;
+    }
+
+    .navbar__item:hover {
+        box-shadow: none;
+        border-bottom: 3px solid orange;
+        background-color: transparent;
+        color: white;
+
+    }
+
+    .card {
+        height: 500px;
+        background-color: #f8f9fa;
+    }
+
+    .container__grid {
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .container__testimonials>.container__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+}
