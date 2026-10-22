@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+/*
+Estilos basicos movil
+*/
+.header {
+    width: 100%;
+}
+.container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 0;
+    margin: 0 auto;
+}
+.container_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    padding: 1rem 2rem;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: blue;
+}
+.toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 4px;
+    border: none;
+    background: transparent;
+    padding: 9px;
+    cursor: pointer;
+}
+.linea {
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: black;
+    transition:
+        transform 0.3s,
+        opacity 0.3s; /* Añadido: Si no agregas transition, el menú cambia de golpe sin animar */
+}
+.toggle.active .linea:first-child {
+    transform: translateY(8px) rotate(45deg);
+}
+.toggle.active .linea:nth-child(2) {
+    opacity: 0;
+}
+.toggle.active .linea:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 101%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1.6rem 0;
+    z-index: 10;
+}
+.navbar.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.nav_list {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.nav_item {
+    width: 100%;
+}
+
+.nav_link {
+    background-color: hwb(210 0% 0%);
+    padding: 1.4rem 0;
+    display: block;
+    border-radius: 12px;
+    max-width: 85%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    color: white;
+    align-content: center;
+}
+
+.title__hero {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+.descripcion__hero {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+.container__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.btn {
+    background-color: white;
+    padding: 1rem 0;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+.btn_primary {
+    background-color: hwb(210 0% 0%);
+    color: white;
+}
+
+.btn::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -50%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-30deg);
+    animation: destello 3s infinite linear;
+}
+@keyframes destello {
+    0% {
+        left: -50%;
+    }
+    30% {
+        left: 110%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+/*Aqui van las secciones*/
+
+.servicios {
+    background-color: #1d5185;
+}
+.container__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+/*caracteristicas generales de las card*/
+.card {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 1rem;
+    gap: 2rem;
+    border-radius: 12px;
+}
+/*caracteristicas de las card-servicios*/
+.card-servicios {
+    background-color: red;
+
+    box-shadow: -4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+.card-servicios:hover {
+    box-shadow: -4px 4px 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-4px);
+}
+
+.container__img {
+    width: 100%;
+    height: 200px;
+}
+/*caracteristicas de las card-testimonios*/
+.testimonios {
+    background-color: darkkhaki;
+}
+.card-testimonios {
+    background-color: transparent;
+    perspective: 1000px;
+    padding: 0;
+}
+.eje_rotativo {
+    width: 100%;
+    height: 500px;
+    padding: 1rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+}
+.card-testimonios:hover .eje_rotativo {
+    transform: rotateY(180deg);
+}
+.cara {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.frontal {
+    background-color: greenyellow;
+}
+
+.trasera {
+    background-color: darkgreen;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/*caracteristicas de las card-portafolio*/
+.portafolio {
+    background-color: brown;
+}
+.card-portafolio {
+    width: 100%;
+    height: 500px;
+    background-color: aqua;
+    overflow: hidden;
+    position: relative;
+}
+.card-portafolio::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 3s ease-in-out;
+    background-color: orange;
+}
+.card-portafolio:hover::before {
+    transform: translateY(0);
+    /*background-color: #c0d8d8;*/
+    background-color: red;
+}
+/*caracteristicas de las card-blog*/
+.blog {
+    background-color: skyblue;
+}
+.container-blog {
+    background-color: yellow;
+}
+.card-blog {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-blog:hover img {
+    transform: scale(1.1);
+}
+/*Estilos del formulario*/
+/* --- Contenedor del Formulario --- */
+.form-mecanico {
+    max-width: 550px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    font-family:
+        system-ui,
+        -apple-system,
+        sans-serif;
+}
+
+.form__fieldset {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form__legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 0 0.5rem;
+}
+
+/* --- Grupos de Campos --- */
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Inputs, Select y Textarea --- */
+.form__input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #334155;
+    box-sizing: border-box; /* Asegura que el padding no sume ancho extra */
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s,
+        background-color 0.3s;
+}
+
+.form__input--select {
+    cursor: pointer;
+    appearance: none; /* Quita el estilo por defecto en algunos navegadores */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.form__input--textarea {
+    resize: vertical; /* Permite estirar hacia abajo, pero no hacia los lados para no romper el layout */
+    min-height: 120px;
+    font-family: inherit;
+}
+
+/* --- ESTADOS DE ENFOQUE (ACCESIBILIDAD) --- */
+.form__input:focus {
+    outline: none;
+    border-color: #2563eb; /* Azul corporativo */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15); /* Anillo suave de enfoque */
+}
+
+/* --- Botón de Envío --- */
+.form__button {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.1s;
+}
+
+.form__button:hover {
+    background-color: #1d4ed8;
+}
+
+.form__button:active {
+    transform: scale(0.98); /* Sutil efecto de hundimiento al hacer clic */
+}
+
+.form__button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
